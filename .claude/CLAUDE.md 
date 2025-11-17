@@ -3,4 +3,34 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository
 
 # Workflow
+
 - Always create a todo list when working with medium or highter complex tasks
+- Don't ask permission to read or find files, just do it
+- Don't ask permission to execute tests, just do it
+- Desconsiderar pasta my-app
+
+# Code workflow
+
+- Always follow TDD when creating code. First, create the test, then the implementation, check the test, and refactor if necessary
+
+# Code
+
+- Always create new files with kebab-case naming
+
+# Typescript
+
+- Never use any type
+- Always try to use `type` instead of `interface`
+- When creating a constant that will not actually be changed or that is not created from interpolation, create it with all caps and snake_case
+- Always use arrow functions for function definitions
+- Always export functions, props as named exports
+
+# ReactJs
+
+- Always use "import \* as React from 'react'"
+- Always try to create pure components
+  - create de componente folder
+  - create a index.ts file that exports everything using export * from
+  - create the component file using the same name as the folder
+  - create the tests file using the same name as the folder with .test.tsx suffix
+  - export the component as named export

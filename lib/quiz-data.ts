@@ -311,9 +311,8 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "Assumo a liderança e organizo as tarefas",
         points: {
-          [SKILLS.lideranca.name]: 1,
+          [SKILLS.lideranca.name]: 2,
           [SKILLS.iniciativa.name]: 1,
-          [SKILLS.organizacao.name]: 1,
         },
       },
       {
@@ -392,7 +391,7 @@ export const QUESTIONS: QUESTION[] = [
       { text: "2", points: {} },
       { text: "3", points: { [SKILLS.organizacao.name]: 1 } },
       { text: "4", points: { [SKILLS.organizacao.name]: 2 } },
-      { text: "5", points: { [SKILLS.organizacao.name]: 3 } },
+      { text: "5", points: {} },
     ],
   },
   {
@@ -443,14 +442,13 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "Penso nas opções antes de agir",
         points: {
-          [SKILLS.organizacao.name]: 1,
+          [SKILLS.paciencia.name]: 1,
         },
       },
       {
         text: "Procuro manter o grupo calmo e otimista",
         points: {
-          [SKILLS.alto_astral.name]: 2,
-          [SKILLS.empatia.name]: 1,
+          [SKILLS.alto_astral.name]: 3,
         },
       },
       {
@@ -469,7 +467,7 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "Gosto de analisar, planejar e pensar antes de agir",
         points: {
-          [SKILLS.organizacao.name]: 1,
+          [SKILLS.lideranca.name]: 1,
         },
       },
       {
@@ -508,7 +506,7 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "Cuidar de detalhes e organização",
         points: {
-          [SKILLS.organizacao.name]: 1,
+          [SKILLS.servico.name]: 1,
         },
       },
       {
@@ -522,6 +520,7 @@ export const QUESTIONS: QUESTION[] = [
         points: {
           [DEPARTMENTS.ministerio_som_transmissao.name]: 1,
           [SKILLS.computador.name]: 1,
+          [SKILLS.redes_sociais.name]: 1,
         },
       },
     ],
@@ -534,8 +533,7 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "Quando cuido de pessoas",
         points: {
-          [SKILLS.servico.name]: 1,
-          [SKILLS.empatia.name]: 1,
+          [SKILLS.servico.name]: 2,
           [DEPARTMENTS.acao_solidaria_adventista.name]: 1,
           [DEPARTMENTS.ministerio_possibilidades.name]: 1,
         },
@@ -571,8 +569,7 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "Ajudo na organização e administração",
         points: {
-          [SKILLS.organizacao.name]: 1,
-          [SKILLS.trabalho_em_equipe.name]: 1,
+          [SKILLS.trabalho_em_equipe.name]: 2,
           [DEPARTMENTS.secretaria.name]: 1,
           [DEPARTMENTS.patrimonio_manutencao.name]: 1,
         },
@@ -581,7 +578,6 @@ export const QUESTIONS: QUESTION[] = [
         text: "Quando posso pregar ou compartilhar a fé",
         points: {
           [SKILLS.evangelismo.name]: 1,
-          [SKILLS.comunicacao.name]: 1,
           [DEPARTMENTS.ministerio_pessoal.name]: 1,
         },
       },
@@ -605,8 +601,7 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "3",
         points: {
-          [SKILLS.servico.name]: 1,
-          [SKILLS.empatia.name]: 1,
+          [SKILLS.servico.name]: 2,
           [DEPARTMENTS.acao_solidaria_adventista.name]: 1,
         },
       },
@@ -614,7 +609,6 @@ export const QUESTIONS: QUESTION[] = [
         text: "4",
         points: {
           [SKILLS.servico.name]: 2,
-          [SKILLS.empatia.name]: 2,
           [DEPARTMENTS.acao_solidaria_adventista.name]: 2,
         },
       },
@@ -622,7 +616,6 @@ export const QUESTIONS: QUESTION[] = [
         text: "5",
         points: {
           [SKILLS.servico.name]: 3,
-          [SKILLS.empatia.name]: 3,
           [DEPARTMENTS.acao_solidaria_adventista.name]: 3,
         },
       },
@@ -719,4 +712,1524 @@ export const QUESTIONS: QUESTION[] = [
       },
     ],
   },
+  {
+    id: 13,
+    text: "Você se sente confortável em aconselhar pessoas que estão passando por crises espirituais ou momentos difíceis?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.aconselhamento_familiar.name]: 3,
+          [SKILLS.paciencia.name]: 2,
+          [DEPARTMENTS.anciaos.name]: 2,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 14,
+    text: "Em situações de conflito na igreja, qual é sua abordagem preferida?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Procuro mediar com imparcialidade e sabedoria bíblica",
+        points: {
+          [SKILLS.mediacao_conflitos.name]: 3,
+          [SKILLS.lideranca.name]: 2,
+          [SKILLS.paciencia.name]: 2,
+          [DEPARTMENTS.anciaos.name]: 2,
+        },
+      },
+      {
+        text: "Prefiro ouvir ambos os lados antes de opinar",
+        points: {
+          [SKILLS.mediacao_conflitos.name]: 2,
+          [SKILLS.empatia.name]: 2,
+          [DEPARTMENTS.anciaos.name]: 1,
+        },
+      },
+      {
+        text: "Busco orientação pastoral antes de me envolver",
+        points: {
+          [SKILLS.paciencia.name]: 1,
+          [DEPARTMENTS.anciaos.name]: 1,
+        },
+      },
+      {
+        text: "Não me sinto confortável mediando conflitos",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 15,
+    text: "Você se interessa por questões relacionadas a direitos humanos, liberdade religiosa e relações com a comunidade?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.comunicacao.name]: 1,
+          [SKILLS.iniciativa.name]: 1,
+          [SKILLS.evangelismo.name]: 1,
+          [DEPARTMENTS.assuntos_publicos_liberdade_religiosa.name]: 2,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 16,
+    text: "Como você se sente ao interagir com autoridades públicas ou representar a igreja em eventos comunitários?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Me sinto muito confortável e preparado",
+        points: {
+          [SKILLS.comunicacao.name]: 3,
+          [SKILLS.lideranca.name]: 2,
+          [SKILLS.iniciativa.name]: 2,
+          [DEPARTMENTS.assuntos_publicos_liberdade_religiosa.name]: 3,
+        },
+      },
+      {
+        text: "Posso fazer com alguma orientação",
+        points: {
+          [SKILLS.comunicacao.name]: 2,
+          [DEPARTMENTS.assuntos_publicos_liberdade_religiosa.name]: 1,
+        },
+      },
+      {
+        text: "Prefiro apoiar nos bastidores",
+        points: {
+          [SKILLS.trabalho_em_equipe.name]: 1,
+        },
+      },
+      {
+        text: "Não me sinto à vontade com isso",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 17,
+    text: "Com que frequência você lê os escritos de Ellen G. White?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Diariamente",
+        points: {
+          [SKILLS.ellen_white.name]: 3,
+          [SKILLS.ensino.name]: 2,
+          [DEPARTMENTS.escritos_espirito_profecia.name]: 3,
+        },
+      },
+      {
+        text: "Semanalmente",
+        points: {
+          [SKILLS.ellen_white.name]: 2,
+          [DEPARTMENTS.escritos_espirito_profecia.name]: 2,
+        },
+      },
+      {
+        text: "Ocasionalmente",
+        points: {
+          [SKILLS.ellen_white.name]: 1,
+          [DEPARTMENTS.escritos_espirito_profecia.name]: 1,
+        },
+      },
+      {
+        text: "Raramente",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 18,
+    text: "Quais dessas habilidades de comunicação digital você possui? (Selecione todas que se aplicam)",
+    type: QUESTION_TYPE.MULTIPLE_CHOICE,
+    options: [
+      {
+        text: "Fotografia e produção de vídeo",
+        points: {
+          [SKILLS.fotografia_e_video.name]: 2,
+          [DEPARTMENTS.ministerio_comunicacao.name]: 1,
+        },
+      },
+      {
+        text: "Edição de imagem e vídeo",
+        points: {
+          [SKILLS.edicao_imagem_video.name]: 2,
+          [DEPARTMENTS.ministerio_comunicacao.name]: 1,
+        },
+      },
+      {
+        text: "Gestão de redes sociais",
+        points: {
+          [SKILLS.redes_sociais.name]: 2,
+          [SKILLS.comunicacao.name]: 1,
+          [DEPARTMENTS.ministerio_comunicacao.name]: 1,
+        },
+      },
+      {
+        text: "Design gráfico",
+        points: {
+          [SKILLS.criatividade.name]: 1,
+          [SKILLS.computador.name]: 1,
+          [SKILLS.edicao_imagem_video.name]: 1,
+          [DEPARTMENTS.ministerio_comunicacao.name]: 1,
+        },
+      },
+      {
+        text: "Nenhuma das anteriores",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 19,
+    text: "Quanto você se sente confortável com programas de edição (Photoshop, Premiere, Canva, etc.)?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Muito confortável, uso regularmente",
+        points: {
+          [SKILLS.edicao_imagem_video.name]: 2,
+          [SKILLS.fotografia_e_video.name]: 2,
+          [SKILLS.computador.name]: 2,
+          [DEPARTMENTS.ministerio_comunicacao.name]: 2,
+        },
+      },
+      {
+        text: "Uso básico, consigo fazer tarefas simples",
+        points: {
+          [SKILLS.edicao_imagem_video.name]: 2,
+          [SKILLS.computador.name]: 1,
+          [DEPARTMENTS.ministerio_comunicacao.name]: 1,
+        },
+      },
+      {
+        text: "Tenho interesse em aprender",
+        points: {
+          [SKILLS.computador.name]: 1,
+          [DEPARTMENTS.ministerio_comunicacao.name]: 1,
+        },
+      },
+      {
+        text: "Não tenho familiaridade",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 20,
+    text: "Você tem interesse ou experiência em aconselhar casais ou famílias?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.aconselhamento_familiar.name]: 3,
+          [SKILLS.paciencia.name]: 3,
+          [DEPARTMENTS.ministerio_familia.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 21,
+    text: "Quais atividades do Ministério da Família mais te interessam? (Selecione todas)",
+    type: QUESTION_TYPE.MULTIPLE_CHOICE,
+    options: [
+      {
+        text: "Organizar retiros de casais",
+        points: {
+          [SKILLS.lideranca.name]: 1,
+          [DEPARTMENTS.ministerio_familia.name]: 2,
+        },
+      },
+      {
+        text: "Facilitar grupos de apoio para pais",
+        points: {
+          [SKILLS.mentoria.name]: 2,
+          [SKILLS.aconselhamento_familiar.name]: 2,
+          [DEPARTMENTS.ministerio_familia.name]: 2,
+        },
+      },
+      {
+        text: "Desenvolver programas para fortalecimento familiar",
+        points: {
+          [SKILLS.criatividade.name]: 3,
+          [DEPARTMENTS.ministerio_familia.name]: 2,
+        },
+      },
+      {
+        text: "Aconselhamento de casais em conflito",
+        points: {
+          [SKILLS.aconselhamento_familiar.name]: 3,
+          [SKILLS.mediacao_conflitos.name]: 2,
+          [DEPARTMENTS.ministerio_familia.name]: 2,
+        },
+      },
+      {
+        text: "Preparação de noivos",
+        points: {
+          [SKILLS.aconselhamento_familiar.name]: 2,
+          [SKILLS.mentoria.name]: 2,
+          [DEPARTMENTS.ministerio_familia.name]: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 22,
+    text: "Você se sente preparado para mentorear jovens casais ou famílias em formação?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.mentoria.name]: 3,
+          [SKILLS.aconselhamento_familiar.name]: 2,
+          [SKILLS.paciencia.name]: 2,
+          [DEPARTMENTS.ministerio_familia.name]: 2,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 23,
+    text: "Como você se sente em relação a vender ou distribuir livros missionários?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Adoro fazer isso, me sinto realizado",
+        points: {
+          [SKILLS.evangelismo.name]: 3,
+          [SKILLS.comunicacao.name]: 2,
+          [SKILLS.iniciativa.name]: 2,
+          [DEPARTMENTS.ministerio_publicacoes.name]: 3,
+        },
+      },
+      {
+        text: "Posso fazer se necessário",
+        points: {
+          [SKILLS.evangelismo.name]: 1,
+          [DEPARTMENTS.ministerio_publicacoes.name]: 1,
+        },
+      },
+      {
+        text: "Prefiro apoiar de outras formas",
+        points: {
+          [SKILLS.trabalho_em_equipe.name]: 1,
+        },
+      },
+      {
+        text: "Não me sinto confortável",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 24,
+    text: "Qual dessas atividades de recepção mais combina com você?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Cumprimentar pessoas na porta da igreja",
+        points: {
+          [SKILLS.integracao.name]: 2,
+          [SKILLS.comunicacao.name]: 2,
+          [DEPARTMENTS.ministerio_recepcao.name]: 2,
+        },
+      },
+      {
+        text: "Apresentar visitantes aos membros",
+        points: {
+          [SKILLS.integracao.name]: 3,
+          [SKILLS.comunicacao.name]: 2,
+          [DEPARTMENTS.ministerio_recepcao.name]: 3,
+        },
+      },
+      {
+        text: "Fazer follow-up com visitantes durante a semana",
+        points: {
+          [SKILLS.comunicacao.name]: 2,
+          [SKILLS.iniciativa.name]: 2,
+          [DEPARTMENTS.ministerio_recepcao.name]: 2,
+        },
+      },
+      {
+        text: "Organizar eventos de integração",
+        points: {
+          [SKILLS.integracao.name]: 3,
+          [DEPARTMENTS.ministerio_recepcao.name]: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 25,
+    text: "Você se sentiria confortável em ensinar princípios de saúde baseados na Bíblia e Espírito de Profecia?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.ensino.name]: 2,
+          [SKILLS.ellen_white.name]: 1,
+          [SKILLS.comunicacao.name]: 1,
+          [DEPARTMENTS.ministerio_saude.name]: 2,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 26,
+    text: "As pessoas geralmente te descrevem como alguém entusiasmado e energético?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.energia.name]: 2,
+          [SKILLS.alto_astral.name]: 2,
+          [SKILLS.lideranca.name]: 1,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 27,
+    text: "Ordene as seguintes atividades evangelísticas da que você mais gostaria de fazer para a que menos gostaria:",
+    type: QUESTION_TYPE.RANKING,
+    options: [
+      {
+        text: "Dar estudos bíblicos",
+        points: {
+          [SKILLS.evangelismo.name]: 1,
+          [SKILLS.ensino.name]: 1,
+          [DEPARTMENTS.ministerio_pessoal.name]: 1,
+        },
+      },
+      {
+        text: "Fazer amigos na comunidade",
+        points: {
+          [SKILLS.evangelismo.name]: 1,
+          [DEPARTMENTS.ministerio_pessoal.name]: 1,
+        },
+      },
+      {
+        text: "Participar de campanhas evangelísticas",
+        points: {
+          [SKILLS.evangelismo.name]: 1,
+          [SKILLS.iniciativa.name]: 1,
+          [DEPARTMENTS.ministerio_pessoal.name]: 1,
+        },
+      },
+      {
+        text: "Convidar pessoas para eventos da igreja",
+        points: {
+          [SKILLS.evangelismo.name]: 1,
+          [DEPARTMENTS.ministerio_pessoal.name]: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 28,
+    text: "Qual é seu nível de habilidade com instrumentos musicais?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Proficiente, posso tocar em apresentações",
+        points: {
+          [SKILLS.instrumentos_musicais.name]: 3,
+          [SKILLS.criatividade.name]: 1,
+          [DEPARTMENTS.ministerio_musica.name]: 2,
+        },
+      },
+      {
+        text: "Intermediário, ainda aprendendo",
+        points: {
+          [SKILLS.instrumentos_musicais.name]: 2,
+          [DEPARTMENTS.ministerio_musica.name]: 1,
+        },
+      },
+      {
+        text: "Iniciante, tenho interesse",
+        points: {
+          [SKILLS.instrumentos_musicais.name]: 1,
+        },
+      },
+      {
+        text: "Não toco instrumentos",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 29,
+    text: "Você tem experiência ou interesse em liderar grupos musicais (coral, conjunto, banda)?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.lideranca.name]: 2,
+          [SKILLS.instrumentos_musicais.name]: 1,
+          [SKILLS.organizacao.name]: 1,
+          [DEPARTMENTS.ministerio_musica.name]: 2,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 30,
+    text: "Você tem interesse em atuar na segurança da igreja (controle de acesso, estacionamento, primeiros socorros)?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.seguranca.name]: 3,
+          [SKILLS.servico.name]: 1,
+          [SKILLS.organizacao.name]: 1,
+          [DEPARTMENTS.diaconos.name]: 1,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 31,
+    text: "Com que frequência você se dispõe a visitar membros afastados ou novos interessados?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Semanalmente",
+        points: {
+          [SKILLS.visitacao.name]: 3,
+          [SKILLS.integracao.name]: 2,
+          [SKILLS.evangelismo.name]: 2,
+          [DEPARTMENTS.ministerio_pessoal.name]: 2,
+        },
+      },
+      {
+        text: "Quinzenalmente",
+        points: {
+          [SKILLS.visitacao.name]: 2,
+          [SKILLS.integracao.name]: 2,
+          [DEPARTMENTS.ministerio_pessoal.name]: 1,
+        },
+      },
+      {
+        text: "Mensalmente",
+        points: {
+          [SKILLS.visitacao.name]: 1,
+          [SKILLS.integracao.name]: 1,
+          [DEPARTMENTS.ministerio_pessoal.name]: 1,
+        },
+      },
+      {
+        text: "Quando solicitado",
+        points: {
+          [SKILLS.visitacao.name]: 1,
+        },
+      },
+      {
+        text: "Raramente me sinto à vontade para isso",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 32,
+    text: "Você se vê como alguém que pode mentorear ou discipular outras pessoas em sua fé?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.mentoria.name]: 3,
+          [SKILLS.ensino.name]: 2,
+          [SKILLS.lideranca.name]: 1,
+          [DEPARTMENTS.ministerio_pessoal.name]: 1,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 33,
+    text: "Qual é seu nível de habilidade com computadores e tecnologia?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Avançado (programação, sistemas complexos)",
+        points: {
+          [SKILLS.computador.name]: 3,
+          [SKILLS.redes_sociais.name]: 1,
+          [DEPARTMENTS.ministerio_comunicacao.name]: 1,
+          [DEPARTMENTS.ministerio_som_transmissao.name]: 1,
+        },
+      },
+      {
+        text: "Intermediário (Office, internet, apps básicos)",
+        points: {
+          [SKILLS.computador.name]: 2,
+          [DEPARTMENTS.secretaria.name]: 1,
+        },
+      },
+      {
+        text: "Básico (uso essencial)",
+        points: {
+          [SKILLS.computador.name]: 1,
+        },
+      },
+      {
+        text: "Preciso de ajuda com tecnologia",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 34,
+    text: "Qual sua disposição para preparar lições ou estudos bíblicos para compartilhar com outros?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Adoro preparar e compartilhar estudos",
+        points: {
+          [SKILLS.ensino.name]: 3,
+          [DEPARTMENTS.escola_sabatina.name]: 3,
+        },
+      },
+      {
+        text: "Posso preparar com orientação",
+        points: {
+          [SKILLS.ensino.name]: 2,
+          [DEPARTMENTS.escola_sabatina.name]: 2,
+        },
+      },
+      {
+        text: "Prefiro participar como aluno",
+        points: {
+          [SKILLS.trabalho_em_equipe.name]: 1,
+          [DEPARTMENTS.escola_sabatina.name]: 1,
+        },
+      },
+      {
+        text: "Não me sinto confortável ensinando",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 35,
+    text: "Você se sente motivado a promover comunhão e integração entre os membros da classe/grupo?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.integracao.name]: 2,
+          [SKILLS.comunicacao.name]: 2,
+          [DEPARTMENTS.escola_sabatina.name]: 2,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 36,
+    text: "Você teria interesse em organizar atividades recreativas e espirituais para adolescentes?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.adolescentes.name]: 3,
+          [SKILLS.criatividade.name]: 2,
+          [SKILLS.alto_astral.name]: 1,
+          [DEPARTMENTS.ministerio_adolescente.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 37,
+    text: "Você se sente preparado para mentorear adolescentes em questões de fé, identidade e propósito de vida?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sim, tenho experiência e me sinto confortável",
+        points: {
+          [SKILLS.adolescentes.name]: 3,
+          [SKILLS.mentoria.name]: 3,
+          [DEPARTMENTS.ministerio_adolescente.name]: 3,
+        },
+      },
+      {
+        text: "Posso fazer com treinamento e apoio",
+        points: {
+          [SKILLS.adolescentes.name]: 2,
+          [SKILLS.mentoria.name]: 1,
+          [DEPARTMENTS.ministerio_adolescente.name]: 2,
+        },
+      },
+      {
+        text: "Prefiro apoiar de outras formas",
+        points: {
+          [SKILLS.trabalho_em_equipe.name]: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 38,
+    text: "Qual dessas áreas do ministério masculino mais te atrai?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Mentorear outros homens em liderança espiritual da família",
+        points: {
+          [SKILLS.homens.name]: 3,
+          [SKILLS.mentoria.name]: 2,
+          [DEPARTMENTS.ministerio_homens.name]: 3,
+        },
+      },
+      {
+        text: "Organizar projetos de serviço comunitário",
+        points: {
+          [SKILLS.homens.name]: 2,
+          [SKILLS.servico.name]: 2,
+          [DEPARTMENTS.ministerio_homens.name]: 2,
+        },
+      },
+      {
+        text: "Promover atividades de integração entre homens",
+        points: {
+          [SKILLS.homens.name]: 2,
+          [SKILLS.integracao.name]: 2,
+          [DEPARTMENTS.ministerio_homens.name]: 2,
+        },
+      },
+      {
+        text: "Não me identifico com essas áreas",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 39,
+    text: "Você se vê como alguém que pode inspirar homens a serem líderes servos em suas famílias e comunidades?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.homens.name]: 3,
+          [SKILLS.lideranca.name]: 2,
+          [SKILLS.mentoria.name]: 2,
+          [DEPARTMENTS.ministerio_homens.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 40,
+    text: "Quais atividades com idosos mais despertam seu interesse?",
+    type: QUESTION_TYPE.MULTIPLE_CHOICE,
+    options: [
+      {
+        text: "Organizar passeios e eventos sociais",
+        points: {
+          [SKILLS.idoso.name]: 3,
+          [SKILLS.paciencia.name]: 1,
+          [DEPARTMENTS.ministerio_idoso.name]: 2,
+        },
+      },
+      {
+        text: "Fazer visitação e companhia",
+        points: {
+          [SKILLS.idoso.name]: 2,
+          [SKILLS.visitacao.name]: 2,
+          [DEPARTMENTS.ministerio_idoso.name]: 2,
+        },
+      },
+      {
+        text: "Ajudar em necessidades práticas (transporte, compras, etc.)",
+        points: {
+          [SKILLS.idoso.name]: 2,
+          [SKILLS.servico.name]: 2,
+          [DEPARTMENTS.ministerio_idoso.name]: 2,
+        },
+      },
+      {
+        text: "Promover estudos bíblicos e devocionais",
+        points: {
+          [SKILLS.idoso.name]: 2,
+          [SKILLS.ensino.name]: 1,
+          [DEPARTMENTS.ministerio_idoso.name]: 2,
+        },
+      },
+      {
+        text: "Nenhuma das anteriores",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 41,
+    text: "Quais áreas do Ministério da Mulher mais te interessam?",
+    type: QUESTION_TYPE.MULTIPLE_CHOICE,
+    options: [
+      {
+        text: "Organizar retiros e eventos espirituais para mulheres",
+        points: {
+          [SKILLS.mulheres.name]: 3,
+          [SKILLS.lideranca.name]: 1,
+          [DEPARTMENTS.ministerio_mulher.name]: 2,
+        },
+      },
+      {
+        text: "Mentorear mulheres mais jovens",
+        points: {
+          [SKILLS.mulheres.name]: 3,
+          [SKILLS.mentoria.name]: 2,
+          [DEPARTMENTS.ministerio_mulher.name]: 2,
+        },
+      },
+      {
+        text: "Desenvolver projetos de ação social",
+        points: {
+          [SKILLS.mulheres.name]: 2,
+          [SKILLS.servico.name]: 2,
+          [DEPARTMENTS.ministerio_mulher.name]: 2,
+        },
+      },
+      {
+        text: "Promover evangelismo feminino",
+        points: {
+          [SKILLS.mulheres.name]: 2,
+          [SKILLS.evangelismo.name]: 2,
+          [DEPARTMENTS.ministerio_mulher.name]: 2,
+        },
+      },
+      {
+        text: "Nenhuma das anteriores",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 42,
+    text: "Você tem interesse em ensinar valores cristãos através de atividades práticas, artesanato e jogos?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sim, adoro atividades manuais e criativas com crianças",
+        points: {
+          [SKILLS.criancas.name]: 3,
+          [SKILLS.criatividade.name]: 2,
+          [SKILLS.alto_astral.name]: 2,
+          [DEPARTMENTS.clube_aventureiros.name]: 3,
+        },
+      },
+      {
+        text: "Posso ajudar se houver treinamento",
+        points: {
+          [SKILLS.criancas.name]: 2,
+          [DEPARTMENTS.clube_aventureiros.name]: 2,
+        },
+      },
+      {
+        text: "Prefiro apoiar de outras formas",
+        points: {
+          [SKILLS.trabalho_em_equipe.name]: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 43,
+    text: "Você gosta de atividades ao ar livre, acampamentos e ensinar habilidades práticas?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.energia.name]: 2,
+          [SKILLS.lideranca.name]: 1,
+          [DEPARTMENTS.clube_desbravadores.name]: 3,
+          [DEPARTMENTS.clube_aventureiros.name]: 1,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 44,
+    text: "Você teria interesse em ensinar especialidades (primeiros socorros, nós, orientação, etc.) para pré-adolescentes e adolescentes?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sim, tenho conhecimento e disposição",
+        points: {
+          [SKILLS.ensino.name]: 2,
+          [SKILLS.adolescentes.name]: 2,
+          [DEPARTMENTS.clube_desbravadores.name]: 3,
+        },
+      },
+      {
+        text: "Posso aprender para ensinar",
+        points: {
+          [SKILLS.iniciativa.name]: 2,
+          [DEPARTMENTS.clube_desbravadores.name]: 2,
+        },
+      },
+      {
+        text: "Prefiro atividades indoor",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 45,
+    text: "Quais áreas do trabalho diaconal mais te atraem?",
+    type: QUESTION_TYPE.MULTIPLE_CHOICE,
+    options: [
+      {
+        text: "Visitação a membros necessitados",
+        points: {
+          [SKILLS.visitacao.name]: 2,
+          [SKILLS.servico.name]: 2,
+          [DEPARTMENTS.diaconos.name]: 2,
+        },
+      },
+      {
+        text: "Organização e assistência em cerimônias",
+        points: {
+          [SKILLS.servico.name]: 3,
+          [DEPARTMENTS.diaconos.name]: 2,
+        },
+      },
+      {
+        text: "Manutenção e cuidado do templo",
+        points: {
+          [SKILLS.servico.name]: 2,
+          [DEPARTMENTS.diaconos.name]: 2,
+          [DEPARTMENTS.patrimonio_manutencao.name]: 1,
+        },
+      },
+      {
+        text: "Assistência social a membros",
+        points: {
+          [SKILLS.servico.name]: 2,
+          [SKILLS.empatia.name]: 2,
+          [DEPARTMENTS.diaconos.name]: 2,
+        },
+      },
+      {
+        text: "Nenhuma das anteriores",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 46,
+    text: "Você tem interesse em desenvolver atividades missionárias e evangelísticas para jovens?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.jovens.name]: 3,
+          [SKILLS.evangelismo.name]: 2,
+          [SKILLS.lideranca.name]: 1,
+          [DEPARTMENTS.ministerio_jovem.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 47,
+    text: "Como você se sente em relação a liderar grupos de jovens em acampamentos, retiros e eventos?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Me sinto muito confortável e animado",
+        points: {
+          [SKILLS.jovens.name]: 3,
+          [SKILLS.lideranca.name]: 3,
+          [SKILLS.energia.name]: 2,
+          [DEPARTMENTS.ministerio_jovem.name]: 3,
+        },
+      },
+      {
+        text: "Posso fazer com apoio de outros líderes",
+        points: {
+          [SKILLS.jovens.name]: 2,
+          [SKILLS.trabalho_em_equipe.name]: 2,
+          [DEPARTMENTS.ministerio_jovem.name]: 2,
+        },
+      },
+      {
+        text: "Prefiro participar, não liderar",
+        points: {
+          [SKILLS.trabalho_em_equipe.name]: 1,
+        },
+      },
+      {
+        text: "Não me sinto à vontade com isso",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 48,
+    text: "Você tem habilidade técnica com equipamentos de som, microfones e mixagem de áudio?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sim, tenho experiência e conhecimento técnico",
+        points: {
+          [SKILLS.computador.name]: 3,
+          [DEPARTMENTS.ministerio_som_transmissao.name]: 3,
+        },
+      },
+      {
+        text: "Tenho conhecimento básico, posso aprender mais",
+        points: {
+          [SKILLS.computador.name]: 2,
+          [DEPARTMENTS.ministerio_som_transmissao.name]: 2,
+        },
+      },
+      {
+        text: "Tenho interesse em aprender do zero",
+        points: {
+          [SKILLS.computador.name]: 1,
+          [DEPARTMENTS.ministerio_som_transmissao.name]: 1,
+        },
+      },
+      {
+        text: "Não tenho interesse nessa área",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 49,
+    text: "Você tem disponibilidade para operar equipamentos de transmissão ao vivo (streaming, câmeras, softwares)?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.computador.name]: 2,
+          [SKILLS.fotografia_e_video.name]: 2,
+          [DEPARTMENTS.ministerio_som_transmissao.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 50,
+    text: "Você tem habilidade com organização de documentos, registros e processos administrativos?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.organizacao.name]: 3,
+          [SKILLS.computador.name]: 2,
+          [DEPARTMENTS.secretaria.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 51,
+    text: "Como você lida com tarefas que exigem atenção aos detalhes e precisão?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sou extremamente detalhista e organizado",
+        points: {
+          [SKILLS.organizacao.name]: 3,
+          [DEPARTMENTS.secretaria.name]: 3,
+          [DEPARTMENTS.tesouraria.name]: 1,
+        },
+      },
+      {
+        text: "Consigo ser cuidadoso quando necessário",
+        points: {
+          [SKILLS.organizacao.name]: 2,
+          [DEPARTMENTS.secretaria.name]: 2,
+        },
+      },
+      {
+        text: "Prefiro atividades mais dinâmicas",
+        points: {
+          [SKILLS.energia.name]: 1,
+        },
+      },
+      {
+        text: "Tenho dificuldade com detalhes",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 52,
+    text: "Você tem sensibilidade e disposição para trabalhar com pessoas com deficiência?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.possibilidades.name]: 3,
+          [SKILLS.paciencia.name]: 3,
+          [DEPARTMENTS.ministerio_possibilidades.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 53,
+    text: "Quais áreas de apoio a pessoas com deficiência mais te interessam?",
+    type: QUESTION_TYPE.MULTIPLE_CHOICE,
+    options: [
+      {
+        text: "Acessibilidade e adaptações físicas na igreja",
+        points: {
+          [SKILLS.possibilidades.name]: 2,
+          [SKILLS.organizacao.name]: 1,
+          [DEPARTMENTS.ministerio_possibilidades.name]: 2,
+        },
+      },
+      {
+        text: "Apoio direto durante cultos e eventos",
+        points: {
+          [SKILLS.possibilidades.name]: 3,
+          [SKILLS.servico.name]: 2,
+          [DEPARTMENTS.ministerio_possibilidades.name]: 2,
+        },
+      },
+      {
+        text: "Ensino e discipulado adaptado",
+        points: {
+          [SKILLS.possibilidades.name]: 3,
+          [SKILLS.ensino.name]: 2,
+          [DEPARTMENTS.ministerio_possibilidades.name]: 2,
+        },
+      },
+      {
+        text: "Integração social e comunhão",
+        points: {
+          [SKILLS.possibilidades.name]: 2,
+          [SKILLS.integracao.name]: 2,
+          [DEPARTMENTS.ministerio_possibilidades.name]: 2,
+        },
+      },
+      {
+        text: "Nenhuma das anteriores",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 54,
+    text: "Você tem experiência com planejamento orçamentário ou controle de estoque?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sim, tenho experiência profissional ou pessoal sólida",
+        points: {
+          [SKILLS.gestao_de_recursos.name]: 3,
+          [SKILLS.organizacao.name]: 2,
+          [DEPARTMENTS.tesouraria.name]: 2,
+        },
+      },
+      {
+        text: "Tenho conhecimento básico",
+        points: {
+          [SKILLS.gestao_de_recursos.name]: 2,
+          [DEPARTMENTS.tesouraria.name]: 1,
+        },
+      },
+      {
+        text: "Não tenho experiência, mas gostaria de aprender",
+        points: {
+          [SKILLS.organizacao.name]: 1,
+        },
+      },
+      {
+        text: "Não me interesso por essa área",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 55,
+    text: "Você tem treinamento ou interesse em primeiros socorros e procedimentos de emergência?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sim, tenho treinamento certificado",
+        points: {
+          [SKILLS.seguranca.name]: 3,
+          [SKILLS.servico.name]: 2,
+          [DEPARTMENTS.diaconos.name]: 1,
+          [DEPARTMENTS.ministerio_saude.name]: 1,
+        },
+      },
+      {
+        text: "Tenho conhecimento básico",
+        points: {
+          [SKILLS.seguranca.name]: 2,
+          [SKILLS.servico.name]: 1,
+        },
+      },
+      {
+        text: "Gostaria de fazer um curso",
+        points: {
+          [SKILLS.seguranca.name]: 1,
+          [SKILLS.iniciativa.name]: 1,
+        },
+      },
+      {
+        text: "Não me interesso",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 56,
+    text: "Você se considera uma pessoa proativa que toma iniciativa sem precisar ser solicitado?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.iniciativa.name]: 3,
+          [SKILLS.lideranca.name]: 2,
+        },
+      },
+      {
+        text: "Não",
+        points: {
+          [SKILLS.trabalho_em_equipe.name]: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 57,
+    text: "Você tem habilidades ou interesse em ensinar culinária saudável e vegetariana?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.ensino.name]: 2,
+          [DEPARTMENTS.ministerio_saude.name]: 3,
+          [SKILLS.energia.name]: 1,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 58,
+    text: "Qual dessas atividades de saúde mais te atrai?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Organizar caminhadas e atividades físicas em grupo",
+        points: {
+          [SKILLS.energia.name]: 2,
+          [DEPARTMENTS.ministerio_saude.name]: 2,
+        },
+      },
+      {
+        text: "Ensinar princípios de temperança e estilo de vida",
+        points: {
+          [SKILLS.ensino.name]: 2,
+          [DEPARTMENTS.ministerio_saude.name]: 2,
+        },
+      },
+      {
+        text: "Realizar check-ups de saúde (pressão, IMC, etc.)",
+        points: {
+          [SKILLS.servico.name]: 2,
+          [DEPARTMENTS.ministerio_saude.name]: 2,
+        },
+      },
+      {
+        text: "Não me interesso",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 59,
+    text: "Você teria interesse em coordenar programas de saúde preventiva na igreja (8 remédios naturais, jejum de Daniel, etc.)?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.organizacao.name]: 2,
+          [SKILLS.ellen_white.name]: 1,
+          [DEPARTMENTS.ministerio_saude.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 60,
+    text: "Você tem habilidades práticas de manutenção e reparos?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sim, tenho experiência com elétrica, hidráulica ou construção",
+        points: {
+          [DEPARTMENTS.patrimonio_manutencao.name]: 3,
+        },
+      },
+      {
+        text: "Tenho habilidades básicas de reparo",
+        points: {
+          [DEPARTMENTS.patrimonio_manutencao.name]: 2,
+        },
+      },
+      {
+        text: "Posso ajudar em trabalhos manuais",
+        points: {
+          [DEPARTMENTS.patrimonio_manutencao.name]: 1,
+          [SKILLS.servico.name]: 1,
+        },
+      },
+      {
+        text: "Não tenho essas habilidades",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 61,
+    text: "Você se disporia a fazer inspeções regulares de segurança e manutenção preventiva do templo?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.organizacao.name]: 2,
+          [SKILLS.seguranca.name]: 1,
+          [DEPARTMENTS.patrimonio_manutencao.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 62,
+    text: "Você tem interesse em trabalhar com colportagem (venda de livros missionários)?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sim, gostaria de ser colportor profissional",
+        points: {
+          [SKILLS.evangelismo.name]: 3,
+          [DEPARTMENTS.ministerio_publicacoes.name]: 3,
+        },
+      },
+      {
+        text: "Posso fazer colportagem estudantil/voluntária",
+        points: {
+          [SKILLS.evangelismo.name]: 2,
+          [DEPARTMENTS.ministerio_publicacoes.name]: 2,
+        },
+      },
+      {
+        text: "Prefiro distribuir gratuitamente",
+        points: {
+          [SKILLS.evangelismo.name]: 1,
+          [DEPARTMENTS.ministerio_publicacoes.name]: 1,
+        },
+      },
+      {
+        text: "Não me interesso",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 63,
+    text: "Você se sente motivado a criar estratégias para divulgar literatura adventista na comunidade?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.criatividade.name]: 2,
+          [SKILLS.iniciativa.name]: 2,
+          [DEPARTMENTS.ministerio_publicacoes.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 64,
+    text: "Você tem paciência e criatividade para ensinar crianças de 6-9 anos através de histórias e atividades lúdicas?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.criancas.name]: 2,
+          [SKILLS.paciencia.name]: 2,
+          [SKILLS.alto_astral.name]: 2,
+          [DEPARTMENTS.clube_aventureiros.name]: 2,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 65,
+    text: "Você tem habilidade para contar histórias bíblicas de forma envolvente para crianças?",
+    type: QUESTION_TYPE.SINGLE_CHOICE,
+    options: [
+      {
+        text: "Sim, adoro e tenho experiência",
+        points: {
+          [SKILLS.criancas.name]: 3,
+          [SKILLS.ensino.name]: 2,
+          [SKILLS.criatividade.name]: 1,
+          [DEPARTMENTS.ministerio_crianca.name]: 3,
+        },
+      },
+      {
+        text: "Posso aprender e desenvolver",
+        points: {
+          [SKILLS.criancas.name]: 2,
+          [DEPARTMENTS.ministerio_crianca.name]: 2,
+        },
+      },
+      {
+        text: "Prefiro outras atividades com crianças",
+        points: {
+          [DEPARTMENTS.ministerio_crianca.name]: 1,
+        },
+      },
+      {
+        text: "Não me sinto confortável",
+        points: {},
+      },
+    ],
+  },
+  {
+    id: 66,
+    text: "Você se sente motivado a ensinar sobre mordomia, dízimos e ofertas?",
+    type: QUESTION_TYPE.YES_NO,
+    options: [
+      {
+        text: "Sim",
+        points: {
+          [SKILLS.ensino.name]: 2,
+          [SKILLS.gestao_de_recursos.name]: 1,
+          [DEPARTMENTS.ministerio_mordomia_crista.name]: 3,
+        },
+      },
+      {
+        text: "Não",
+        points: {},
+      },
+    ],
+  }
+
 ];
