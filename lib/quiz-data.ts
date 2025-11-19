@@ -494,7 +494,7 @@ export const QUESTIONS: QUESTION[] = [
   // === PERGUNTAS TIPO RANKING - ESCOLA SABATINA ===
   {
     id: 6,
-    text: "Qual seu interesse em ensinar a Lição da Escola Sabatina?",
+    text: "Qual seu interesse em ensinar?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -504,6 +504,7 @@ export const QUESTIONS: QUESTION[] = [
           [SKILLS.ensino.name]: 1,
           [SKILLS.comunicacao.name]: 1,
           [DEPARTMENTS.escola_sabatina.name]: 1,
+          [DEPARTMENTS.ministerio_pessoal.name]: 1,
         },
       },
       {
@@ -512,6 +513,7 @@ export const QUESTIONS: QUESTION[] = [
           [SKILLS.ensino.name]: 2,
           [SKILLS.comunicacao.name]: 2,
           [DEPARTMENTS.escola_sabatina.name]: 2,
+          [DEPARTMENTS.ministerio_pessoal.name]: 2,
         },
       },
       {
@@ -520,6 +522,7 @@ export const QUESTIONS: QUESTION[] = [
           [SKILLS.ensino.name]: 3,
           [SKILLS.comunicacao.name]: 3,
           [DEPARTMENTS.escola_sabatina.name]: 3,
+          [DEPARTMENTS.ministerio_pessoal.name]: 3,
         },
       },
       {
@@ -528,53 +531,14 @@ export const QUESTIONS: QUESTION[] = [
           [SKILLS.ensino.name]: 4,
           [SKILLS.comunicacao.name]: 4,
           [DEPARTMENTS.escola_sabatina.name]: 4,
-        },
-      },
-    ],
-  },
-  {
-    id: 7,
-    text: "Como você avalia sua habilidade para organizar programações de Escola Sabatina?",
-    type: QUESTION_TYPE.RANKING,
-    options: [
-      { text: "1", points: {} },
-      {
-        text: "2",
-        points: {
-          [SKILLS.organizacao.name]: 1,
-          [SKILLS.lideranca.name]: 1,
-          [DEPARTMENTS.escola_sabatina.name]: 1,
-        },
-      },
-      {
-        text: "3",
-        points: {
-          [SKILLS.organizacao.name]: 2,
-          [SKILLS.lideranca.name]: 2,
-          [DEPARTMENTS.escola_sabatina.name]: 2,
-        },
-      },
-      {
-        text: "4",
-        points: {
-          [SKILLS.organizacao.name]: 3,
-          [SKILLS.lideranca.name]: 3,
-          [DEPARTMENTS.escola_sabatina.name]: 3,
-        },
-      },
-      {
-        text: "5",
-        points: {
-          [SKILLS.organizacao.name]: 4,
-          [SKILLS.lideranca.name]: 4,
-          [DEPARTMENTS.escola_sabatina.name]: 4,
+          [DEPARTMENTS.ministerio_pessoal.name]: 4,
         },
       },
     ],
   },
   {
     id: 8,
-    text: "Qual seu nível de interesse em conduzir estudos bíblicos em pequenos grupos?",
+    text: "Qual seu nível de interesse em conduzir estudos e discussões em pequenos grupos sobre temas significativos?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -619,7 +583,7 @@ export const QUESTIONS: QUESTION[] = [
   // === MINISTÉRIO DA CRIANÇA ===
   {
     id: 9,
-    text: "Qual seu nível de interesse em trabalhar com crianças em atividades da igreja?",
+    text: "Qual seu nível de interesse em trabalhar com crianças em atividades educativas e recreativas?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -703,7 +667,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 11,
-    text: "Qual seu interesse em contar histórias bíblicas para crianças?",
+    text: "Qual seu interesse em contar histórias educativas e inspiracionais para crianças?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -748,7 +712,7 @@ export const QUESTIONS: QUESTION[] = [
   // === CLUBE DE AVENTUREIROS ===
   {
     id: 12,
-    text: "Qual seu nível de energia e disposição para liderar atividades com crianças de 6-9 anos?",
+    text: "Qual seu nível de energia e disposição para participar de atividades com crianças de 6-9 anos?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -873,7 +837,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 15,
-    text: "Como você avalia sua capacidade de liderar equipes de desbravadores?",
+    text: "Como você avalia sua capacidade de liderar equipes de adolescentes em atividades?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -958,7 +922,7 @@ export const QUESTIONS: QUESTION[] = [
   // === MINISTÉRIO DO ADOLESCENTE ===
   {
     id: 17,
-    text: "Qual seu interesse em ser mentor/mentora de adolescentes na igreja?",
+    text: "Qual seu interesse em ser mentor de adolescentes em público?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -1043,14 +1007,13 @@ export const QUESTIONS: QUESTION[] = [
   // === MINISTÉRIO JOVEM ===
   {
     id: 19,
-    text: "Qual seu nível de interesse em liderar atividades do Ministério Jovem?",
+    text: "Qual seu nível de interesse em participar de atividades com jovens?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
       {
         text: "2",
         points: {
-          [SKILLS.lideranca.name]: 1,
           [SKILLS.jovens.name]: 1,
           [DEPARTMENTS.ministerio_jovem.name]: 1,
         },
@@ -1058,7 +1021,6 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "3",
         points: {
-          [SKILLS.lideranca.name]: 2,
           [SKILLS.jovens.name]: 2,
           [DEPARTMENTS.ministerio_jovem.name]: 2,
         },
@@ -1066,7 +1028,6 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "4",
         points: {
-          [SKILLS.lideranca.name]: 3,
           [SKILLS.jovens.name]: 3,
           [DEPARTMENTS.ministerio_jovem.name]: 3,
         },
@@ -1074,7 +1035,6 @@ export const QUESTIONS: QUESTION[] = [
       {
         text: "5",
         points: {
-          [SKILLS.lideranca.name]: 4,
           [SKILLS.jovens.name]: 4,
           [DEPARTMENTS.ministerio_jovem.name]: 4,
         },
@@ -1168,7 +1128,7 @@ export const QUESTIONS: QUESTION[] = [
   // === MINISTÉRIO DO IDOSO ===
   {
     id: 22,
-    text: "Qual seu nível de interesse em visitar e cuidar dos membros idosos da igreja?",
+    text: "Qual seu nível de interesse em visitar e cuidar dos membros idosos de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -1252,7 +1212,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 24,
-    text: "Qual seu interesse em ouvir e acompanhar espiritualmente os membros mais velhos?",
+    text: "Qual seu interesse em ouvir e acompanhar espiritualmente os pessoas mais velhas?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -1583,7 +1543,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 32,
-    text: "Como você avalia sua capacidade de organizar eventos evangelísticos voltados para mulheres?",
+    text: "Como você avalia sua capacidade de organizar eventos de compartilhamento e divulgação voltados para mulheres?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -1625,50 +1585,10 @@ export const QUESTIONS: QUESTION[] = [
       },
     ],
   },
-  {
-    id: 33,
-    text: "Qual seu interesse em desenvolver projetos criativos no Ministério da Mulher?",
-    type: QUESTION_TYPE.RANKING,
-    options: [
-      { text: "1", points: {} },
-      {
-        text: "2",
-        points: {
-          [SKILLS.mulheres.name]: 1,
-          [SKILLS.criatividade.name]: 1,
-          [DEPARTMENTS.ministerio_mulher.name]: 1,
-        },
-      },
-      {
-        text: "3",
-        points: {
-          [SKILLS.mulheres.name]: 2,
-          [SKILLS.criatividade.name]: 2,
-          [DEPARTMENTS.ministerio_mulher.name]: 2,
-        },
-      },
-      {
-        text: "4",
-        points: {
-          [SKILLS.mulheres.name]: 3,
-          [SKILLS.criatividade.name]: 3,
-          [DEPARTMENTS.ministerio_mulher.name]: 3,
-        },
-      },
-      {
-        text: "5",
-        points: {
-          [SKILLS.mulheres.name]: 4,
-          [SKILLS.criatividade.name]: 4,
-          [DEPARTMENTS.ministerio_mulher.name]: 4,
-        },
-      },
-    ],
-  },
   // === MINISTÉRIO DA MÚSICA ===
   {
     id: 34,
-    text: "Qual seu nível de habilidade em cantar para os cultos e programações da igreja?",
+    text: "Qual seu nível de habilidade em cantar em público para eventos e programações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -1704,7 +1624,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 35,
-    text: "Como você avalia sua habilidade para tocar instrumentos musicais na igreja?",
+    text: "Como você avalia sua habilidade para tocar instrumentos musicais em público?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -1740,7 +1660,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 36,
-    text: "Qual seu interesse em dirigir e ensaiar grupos musicais ou corais?",
+    text: "Qual seu interesse em ensaiar em um grupo musical ou coral?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -1825,7 +1745,7 @@ export const QUESTIONS: QUESTION[] = [
   // === MINISTÉRIO PESSOAL ===
   {
     id: 38,
-    text: "Qual seu nível de interesse em compartilhar sua fé e fazer evangelismo pessoal?",
+    text: "Qual seu nível de interesse em compartilhar sua fé e fazer compartilhamento pessoal?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -1865,7 +1785,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 39,
-    text: "Como você avalia seu interesse em visitar membros e interessados?",
+    text: "Como você avalia seu interesse em visitar pessoas da comunidade?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -1909,7 +1829,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 40,
-    text: "Qual seu interesse em dar estudos bíblicos para interessados?",
+    text: "Qual seu interesse em dar estudos e discussões para interessados?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2071,7 +1991,7 @@ export const QUESTIONS: QUESTION[] = [
   // === ANCIÃOS ===
   {
     id: 44,
-    text: "Qual seu interesse em exercer liderança espiritual na igreja local?",
+    text: "Qual seu interesse em exercer liderança espiritual em grupos e comunidades?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2111,7 +2031,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 45,
-    text: "Como você avalia sua capacidade de aconselhar membros em questões espirituais?",
+    text: "Como você avalia sua capacidade de aconselhar participantes em questões espirituais?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2155,7 +2075,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 46,
-    text: "Qual seu interesse em conduzir cerimônias religiosas (batismos, Santa Ceia, etc.)?",
+    text: "Qual seu interesse em conduzir cerimônias e momentos significativos?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2196,7 +2116,7 @@ export const QUESTIONS: QUESTION[] = [
   // === DIÁCONOS ===
   {
     id: 47,
-    text: "Qual seu nível de interesse em servir nas necessidades práticas da igreja?",
+    text: "Qual seu nível de interesse em servir nas necessidades práticas de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2236,7 +2156,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 48,
-    text: "Como você avalia sua disposição para preparar o templo para os cultos e cerimônias?",
+    text: "Como você avalia sua disposição para preparar o espaço e organizar espaços para eventos e reuniões?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2276,7 +2196,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 49,
-    text: "Qual seu interesse em auxiliar em batismos e Santa Ceia?",
+    text: "Qual seu interesse em auxiliar em cerimônias e eventos significativos?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2317,7 +2237,7 @@ export const QUESTIONS: QUESTION[] = [
   // === MINISTÉRIO DA SAÚDE ===
   {
     id: 50,
-    text: "Qual seu nível de interesse em promover o estilo de vida saudável na igreja?",
+    text: "Qual seu nível de interesse em promover o estilo de vida saudável em público?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2356,48 +2276,8 @@ export const QUESTIONS: QUESTION[] = [
     ],
   },
   {
-    id: 51,
-    text: "Como você avalia sua capacidade de organizar feiras de saúde e programas de bem-estar?",
-    type: QUESTION_TYPE.RANKING,
-    options: [
-      { text: "1", points: {} },
-      {
-        text: "2",
-        points: {
-          [SKILLS.organizacao.name]: 1,
-          [SKILLS.servico.name]: 1,
-          [DEPARTMENTS.ministerio_saude.name]: 1,
-        },
-      },
-      {
-        text: "3",
-        points: {
-          [SKILLS.organizacao.name]: 2,
-          [SKILLS.servico.name]: 2,
-          [DEPARTMENTS.ministerio_saude.name]: 2,
-        },
-      },
-      {
-        text: "4",
-        points: {
-          [SKILLS.organizacao.name]: 3,
-          [SKILLS.servico.name]: 3,
-          [DEPARTMENTS.ministerio_saude.name]: 3,
-        },
-      },
-      {
-        text: "5",
-        points: {
-          [SKILLS.organizacao.name]: 4,
-          [SKILLS.servico.name]: 4,
-          [DEPARTMENTS.ministerio_saude.name]: 4,
-        },
-      },
-    ],
-  },
-  {
     id: 52,
-    text: "Qual seu interesse em ensinar sobre os oito remédios naturais?",
+    text: "Qual seu interesse em ensinar sobre saúde?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2434,7 +2314,7 @@ export const QUESTIONS: QUESTION[] = [
   // === MINISTÉRIO DA RECEPÇÃO ===
   {
     id: 53,
-    text: "Qual seu nível de interesse em recepcionar visitantes nos cultos?",
+    text: "Qual seu nível de interesse em recepcionar novos participantes em eventos?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2514,7 +2394,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 55,
-    text: "Qual seu interesse em ajudar a integrar novos membros à comunidade da igreja?",
+    text: "Qual seu interesse em ajudar a integrar novos participantes à comunidade de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2599,7 +2479,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 57,
-    text: "Como você avalia sua capacidade de promover acessibilidade e inclusão na igreja?",
+    text: "Como você avalia sua capacidade de promover acessibilidade e inclusão em público?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2719,48 +2599,8 @@ export const QUESTIONS: QUESTION[] = [
     ],
   },
   {
-    id: 60,
-    text: "Como você avalia sua capacidade de organizar campanhas de distribuição de livros?",
-    type: QUESTION_TYPE.RANKING,
-    options: [
-      { text: "1", points: {} },
-      {
-        text: "2",
-        points: {
-          [SKILLS.organizacao.name]: 1,
-          [SKILLS.evangelismo.name]: 1,
-          [DEPARTMENTS.ministerio_publicacoes.name]: 1,
-        },
-      },
-      {
-        text: "3",
-        points: {
-          [SKILLS.organizacao.name]: 2,
-          [SKILLS.evangelismo.name]: 2,
-          [DEPARTMENTS.ministerio_publicacoes.name]: 2,
-        },
-      },
-      {
-        text: "4",
-        points: {
-          [SKILLS.organizacao.name]: 3,
-          [SKILLS.evangelismo.name]: 3,
-          [DEPARTMENTS.ministerio_publicacoes.name]: 3,
-        },
-      },
-      {
-        text: "5",
-        points: {
-          [SKILLS.organizacao.name]: 4,
-          [SKILLS.evangelismo.name]: 4,
-          [DEPARTMENTS.ministerio_publicacoes.name]: 4,
-        },
-      },
-    ],
-  },
-  {
     id: 61,
-    text: "Qual seu interesse em trabalhar como colportor ou apoiar a colportagem?",
+    text: "Qual seu interesse em trabalhar como distribuidor de materiais educativos ou apoiar a distribuição?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2801,7 +2641,7 @@ export const QUESTIONS: QUESTION[] = [
   // === ESCRITOS DO ESPÍRITO DE PROFECIA ===
   {
     id: 62,
-    text: "Qual seu nível de conhecimento dos escritos de Ellen G. White?",
+    text: "Qual seu nível de conhecimento sobre autores inspiracionais?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2837,7 +2677,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 63,
-    text: "Como você avalia seu interesse em ensinar sobre os escritos do Espírito de Profecia?",
+    text: "Como você avalia seu interesse em ensinar e compartilhar conhecimentos de autores inspiracionais?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2877,7 +2717,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 64,
-    text: "Qual seu interesse em organizar grupos de estudo dos livros de Ellen White?",
+    text: "Qual seu interesse em organizar grupos de estudo sobre temas inspiracionais?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2918,7 +2758,7 @@ export const QUESTIONS: QUESTION[] = [
   // === MINISTÉRIO DA MORDOMIA CRISTÃ ===
   {
     id: 65,
-    text: "Qual seu nível de interesse em ensinar sobre mordomia cristã (dízimos e ofertas)?",
+    text: "Qual seu nível de interesse em ensinar sobre gestão responsável de recursos e finanças?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -2996,50 +2836,10 @@ export const QUESTIONS: QUESTION[] = [
       },
     ],
   },
-  {
-    id: 67,
-    text: "Qual seu interesse em liderar seminários sobre gestão financeira cristã?",
-    type: QUESTION_TYPE.RANKING,
-    options: [
-      { text: "1", points: {} },
-      {
-        text: "2",
-        points: {
-          [SKILLS.lideranca.name]: 1,
-          [SKILLS.gestao_de_recursos.name]: 1,
-          [DEPARTMENTS.ministerio_mordomia_crista.name]: 1,
-        },
-      },
-      {
-        text: "3",
-        points: {
-          [SKILLS.lideranca.name]: 2,
-          [SKILLS.gestao_de_recursos.name]: 2,
-          [DEPARTMENTS.ministerio_mordomia_crista.name]: 2,
-        },
-      },
-      {
-        text: "4",
-        points: {
-          [SKILLS.lideranca.name]: 3,
-          [SKILLS.gestao_de_recursos.name]: 3,
-          [DEPARTMENTS.ministerio_mordomia_crista.name]: 3,
-        },
-      },
-      {
-        text: "5",
-        points: {
-          [SKILLS.lideranca.name]: 4,
-          [SKILLS.gestao_de_recursos.name]: 4,
-          [DEPARTMENTS.ministerio_mordomia_crista.name]: 4,
-        },
-      },
-    ],
-  },
   // === SECRETARIA DA IGREJA ===
   {
     id: 68,
-    text: "Qual seu nível de interesse em gerenciar registros e documentos da igreja?",
+    text: "Qual seu nível de interesse em gerenciar registros e documentos de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3160,7 +2960,7 @@ export const QUESTIONS: QUESTION[] = [
   // === TESOURARIA ===
   {
     id: 71,
-    text: "Qual seu nível de interesse em administrar as finanças da igreja?",
+    text: "Qual seu nível de interesse em administrar as finanças de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3277,7 +3077,7 @@ export const QUESTIONS: QUESTION[] = [
   // === PATRIMÔNIO/MANUTENÇÃO ===
   {
     id: 74,
-    text: "Qual seu nível de interesse em cuidar da manutenção do templo e instalações?",
+    text: "Qual seu nível de interesse em cuidar da manutenção de espaços e instalações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3357,7 +3157,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 76,
-    text: "Qual seu interesse em garantir a segurança das instalações da igreja?",
+    text: "Qual seu interesse em garantir a segurança de instalações e espaços comunitários?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3398,7 +3198,7 @@ export const QUESTIONS: QUESTION[] = [
   // === ASSUNTOS PÚBLICOS E LIBERDADE RELIGIOSA ===
   {
     id: 77,
-    text: "Qual seu nível de interesse em defender a liberdade religiosa?",
+    text: "Qual seu nível de interesse em defender a liberdade de consciência?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3438,7 +3238,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 78,
-    text: "Como você avalia sua capacidade de representar a igreja perante autoridades?",
+    text: "Como você avalia sua capacidade de representar organizações perante autoridades?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3519,7 +3319,7 @@ export const QUESTIONS: QUESTION[] = [
   // === PERGUNTAS ADICIONAIS PARA COBERTURA COMPLETA ===
   {
     id: 80,
-    text: "Como você avalia sua capacidade de tirar fotografias de eventos da igreja?",
+    text: "Como você avalia sua capacidade de tirar fotografias de eventos e programações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3559,7 +3359,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 81,
-    text: "Qual seu nível de interesse em filmar e produzir vídeos para a igreja?",
+    text: "Qual seu nível de interesse em filmar e produzir vídeos para organizações e eventos?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3595,7 +3395,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 82,
-    text: "Como você avalia sua disposição para manter uma atitude positiva nas atividades da igreja?",
+    text: "Como você avalia sua disposição para manter uma atitude positiva em atividades e programações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3631,7 +3431,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 83,
-    text: "Qual seu nível de interesse em monitorar a segurança durante os cultos e eventos?",
+    text: "Qual seu nível de interesse em monitorar a segurança durante os eventos e eventos?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3667,7 +3467,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 84,
-    text: "Como você avalia sua capacidade de tomar iniciativa em projetos da igreja?",
+    text: "Como você avalia sua capacidade de tomar iniciativa em projetos e atividades?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3704,7 +3504,7 @@ export const QUESTIONS: QUESTION[] = [
   // === PERGUNTAS COMPLEMENTARES PARA GARANTIR 3+ OCORRÊNCIAS ===
   {
     id: 85,
-    text: "Qual seu interesse em criar conteúdo para as redes sociais da igreja?",
+    text: "Qual seu interesse em criar conteúdo para as redes sociais de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3744,7 +3544,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 86,
-    text: "Como você avalia sua habilidade para editar vídeos evangelísticos e testemunhos?",
+    text: "Como você avalia sua habilidade para editar vídeos de depoimentos e conteúdo educativo?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3780,7 +3580,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 87,
-    text: "Qual seu nível de interesse em postar e interagir nas redes sociais pela igreja?",
+    text: "Qual seu nível de interesse em postar e interagir nas redes sociais para organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -3821,11 +3621,11 @@ export const QUESTIONS: QUESTION[] = [
   // === PERGUNTAS TIPO MULTIPLE_CHOICE ===
   {
     id: 88,
-    text: "Em quais atividades com crianças você tem interesse ou habilidade? (Selecione todas que se aplicam)",
+    text: "Em quais atividades com crianças você tem interesse ou habilidade?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
-        text: "Contar histórias bíblicas",
+        text: "Contar histórias educativas e inspiracionais",
         points: {
           [SKILLS.criancas.name]: 3,
           [SKILLS.comunicacao.name]: 2,
@@ -3860,7 +3660,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 89,
-    text: "Quais áreas do evangelismo você se sente confortável participando? (Selecione todas que se aplicam)",
+    text: "Quais áreas do compartilhamento e divulgação você se sente confortável participando?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
@@ -3872,7 +3672,7 @@ export const QUESTIONS: QUESTION[] = [
         },
       },
       {
-        text: "Estudos bíblicos",
+        text: "Estudos e discussões sobre temas importantes",
         points: {
           [SKILLS.evangelismo.name]: 3,
           [SKILLS.ensino.name]: 3,
@@ -3899,7 +3699,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 90,
-    text: "Quais habilidades musicais você possui? (Selecione todas que se aplicam)",
+    text: "Quais habilidades musicais você possui?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
@@ -3936,7 +3736,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 91,
-    text: "Em quais atividades administrativas você tem facilidade? (Selecione todas que se aplicam)",
+    text: "Em quais atividades administrativas você tem facilidade?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
@@ -3974,11 +3774,11 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 92,
-    text: "Quais formas de serviço prático você tem interesse? (Selecione todas que se aplicam)",
+    text: "Quais formas de serviço prático você tem interesse?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
-        text: "Preparação do templo para cultos",
+        text: "Preparação do espaço para eventos",
         points: {
           [SKILLS.servico.name]: 3,
           [DEPARTMENTS.diaconos.name]: 3,
@@ -4009,7 +3809,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 93,
-    text: "Com quais faixas etárias você se identifica mais para trabalhar? (Selecione todas que se aplicam)",
+    text: "Com quais faixas etárias você se identifica mais para trabalhar?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
@@ -4036,6 +3836,15 @@ export const QUESTIONS: QUESTION[] = [
         },
       },
       {
+        text: "Adultos (36-59 anos)",
+        points: {
+          [SKILLS.homens.name]: 3,
+          [SKILLS.mulheres.name]: 3,
+          [DEPARTMENTS.ministerio_homens.name]: 3,
+          [DEPARTMENTS.ministerio_mulher.name]: 3,
+        },
+      },
+      {
         text: "Idosos (acima de 60 anos)",
         points: {
           [SKILLS.idoso.name]: 3,
@@ -4046,7 +3855,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 94,
-    text: "Quais habilidades de comunicação você possui? (Selecione todas que se aplicam)",
+    text: "Quais habilidades de comunicação você possui?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
@@ -4081,7 +3890,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 95,
-    text: "Quais atividades técnicas você tem habilidade? (Selecione todas que se aplicam)",
+    text: "Quais atividades técnicas você tem habilidade?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
@@ -4121,7 +3930,7 @@ export const QUESTIONS: QUESTION[] = [
     type: QUESTION_TYPE.SINGLE_CHOICE,
     options: [
       {
-        text: "Liderar grupos grandes (cultos, eventos)",
+        text: "Liderar grupos grandes (eventos, eventos)",
         points: {
           [SKILLS.lideranca.name]: 4,
           [SKILLS.comunicacao.name]: 3,
@@ -4150,7 +3959,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 97,
-    text: "Qual tipo de atividade evangelística você prefere?",
+    text: "Qual tipo de atividade de compartilhamento você prefere?",
     type: QUESTION_TYPE.SINGLE_CHOICE,
     options: [
       {
@@ -4162,7 +3971,7 @@ export const QUESTIONS: QUESTION[] = [
         },
       },
       {
-        text: "Estudos bíblicos pessoais",
+        text: "Estudos e discussões sobre temas importantes pessoais",
         points: {
           [SKILLS.evangelismo.name]: 4,
           [SKILLS.ensino.name]: 3,
@@ -4280,7 +4089,7 @@ export const QUESTIONS: QUESTION[] = [
         },
       },
       {
-        text: "Dar estudos bíblicos para interessados",
+        text: "Dar estudos e discussões para interessados",
         points: {
           [SKILLS.ensino.name]: 4,
           [SKILLS.evangelismo.name]: 3,
@@ -4298,7 +4107,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 101,
-    text: "Como você prefere contribuir com a música na igreja?",
+    text: "Como você prefere contribuir com a música em público?",
     type: QUESTION_TYPE.SINGLE_CHOICE,
     options: [
       {
@@ -4374,7 +4183,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 104,
-    text: "Você tem familiaridade com os escritos de Ellen G. White?",
+    text: "Você tem familiaridade com os autores inspiracionais?",
     type: QUESTION_TYPE.YES_NO,
     options: [
       {
@@ -4392,7 +4201,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 105,
-    text: "Você gostaria de ajudar em cerimônias especiais (batismos, Santa Ceia)?",
+    text: "Você gostaria de ajudar em cerimônias especiais e momentos importantes?",
     type: QUESTION_TYPE.YES_NO,
     options: [
       {
@@ -4431,7 +4240,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 107,
-    text: "Você se sente confortável falando sobre liberdade religiosa em contextos públicos?",
+    text: "Você se sente confortável falando sobre liberdade de consciência em contextos públicos?",
     type: QUESTION_TYPE.YES_NO,
     options: [
       {
@@ -4525,86 +4334,6 @@ export const QUESTIONS: QUESTION[] = [
   },
   // === PERGUNTAS COMPLEMENTARES PARA ATINGIR 6 POR DEPARTAMENTO/HABILIDADE ===
   // SECRETARIA (precisa de 2)
-  {
-    id: 112,
-    text: "Qual seu interesse em manter registros atualizados de membros e batismos?",
-    type: QUESTION_TYPE.RANKING,
-    options: [
-      { text: "1", points: {} },
-      {
-        text: "2",
-        points: {
-          [SKILLS.organizacao.name]: 1,
-          [SKILLS.computador.name]: 1,
-          [DEPARTMENTS.secretaria.name]: 1,
-        },
-      },
-      {
-        text: "3",
-        points: {
-          [SKILLS.organizacao.name]: 2,
-          [SKILLS.computador.name]: 2,
-          [DEPARTMENTS.secretaria.name]: 2,
-        },
-      },
-      {
-        text: "4",
-        points: {
-          [SKILLS.organizacao.name]: 3,
-          [SKILLS.computador.name]: 3,
-          [DEPARTMENTS.secretaria.name]: 3,
-        },
-      },
-      {
-        text: "5",
-        points: {
-          [SKILLS.organizacao.name]: 4,
-          [SKILLS.computador.name]: 4,
-          [DEPARTMENTS.secretaria.name]: 4,
-        },
-      },
-    ],
-  },
-  {
-    id: 113,
-    text: "Como você avalia sua habilidade para processar transferências de membros entre igrejas?",
-    type: QUESTION_TYPE.RANKING,
-    options: [
-      { text: "1", points: {} },
-      {
-        text: "2",
-        points: {
-          [SKILLS.organizacao.name]: 1,
-          [SKILLS.comunicacao.name]: 1,
-          [DEPARTMENTS.secretaria.name]: 1,
-        },
-      },
-      {
-        text: "3",
-        points: {
-          [SKILLS.organizacao.name]: 2,
-          [SKILLS.comunicacao.name]: 2,
-          [DEPARTMENTS.secretaria.name]: 2,
-        },
-      },
-      {
-        text: "4",
-        points: {
-          [SKILLS.organizacao.name]: 3,
-          [SKILLS.comunicacao.name]: 3,
-          [DEPARTMENTS.secretaria.name]: 3,
-        },
-      },
-      {
-        text: "5",
-        points: {
-          [SKILLS.organizacao.name]: 4,
-          [SKILLS.comunicacao.name]: 4,
-          [DEPARTMENTS.secretaria.name]: 4,
-        },
-      },
-    ],
-  },
   // AÇÃO SOLIDÁRIA ADVENTISTA (precisa de 2)
   {
     id: 114,
@@ -4689,7 +4418,7 @@ export const QUESTIONS: QUESTION[] = [
   // MINISTÉRIO DE PUBLICAÇÕES (precisa de 2)
   {
     id: 116,
-    text: "Qual seu interesse em organizar bibliotecas e materiais missionários na igreja?",
+    text: "Qual seu interesse em organizar bibliotecas e materiais missionários em público?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -4725,7 +4454,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 117,
-    text: "Como você avalia seu interesse em promover os livros do Espírito de Profecia?",
+    text: "Como você avalia seu interesse em promover obras de autores inspiracionais?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -4770,7 +4499,7 @@ export const QUESTIONS: QUESTION[] = [
   // ASSUNTOS PÚBLICOS E LIBERDADE RELIGIOSA (precisa de 2)
   {
     id: 118,
-    text: "Qual seu interesse em educar a igreja sobre questões de liberdade religiosa e separação igreja-estado?",
+    text: "Qual seu interesse em educar grupos sobre questões de liberdade de consciência e direitos fundamentais?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -4803,46 +4532,6 @@ export const QUESTIONS: QUESTION[] = [
         points: {
           [SKILLS.ensino.name]: 4,
           [SKILLS.comunicacao.name]: 4,
-          [DEPARTMENTS.assuntos_publicos_liberdade_religiosa.name]: 4,
-        },
-      },
-    ],
-  },
-  {
-    id: 119,
-    text: "Como você avalia sua capacidade de dialogar com autoridades sobre direitos religiosos?",
-    type: QUESTION_TYPE.RANKING,
-    options: [
-      { text: "1", points: {} },
-      {
-        text: "2",
-        points: {
-          [SKILLS.comunicacao.name]: 1,
-          [SKILLS.lideranca.name]: 1,
-          [DEPARTMENTS.assuntos_publicos_liberdade_religiosa.name]: 1,
-        },
-      },
-      {
-        text: "3",
-        points: {
-          [SKILLS.comunicacao.name]: 2,
-          [SKILLS.lideranca.name]: 2,
-          [DEPARTMENTS.assuntos_publicos_liberdade_religiosa.name]: 2,
-        },
-      },
-      {
-        text: "4",
-        points: {
-          [SKILLS.comunicacao.name]: 3,
-          [SKILLS.lideranca.name]: 3,
-          [DEPARTMENTS.assuntos_publicos_liberdade_religiosa.name]: 3,
-        },
-      },
-      {
-        text: "5",
-        points: {
-          [SKILLS.comunicacao.name]: 4,
-          [SKILLS.lideranca.name]: 4,
           [DEPARTMENTS.assuntos_publicos_liberdade_religiosa.name]: 4,
         },
       },
@@ -4891,7 +4580,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 121,
-    text: "Como você avalia seu interesse em treinar a igreja sobre inclusão e acessibilidade?",
+    text: "Como você avalia seu interesse em treinar grupos sobre inclusão e acessibilidade?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -4932,7 +4621,7 @@ export const QUESTIONS: QUESTION[] = [
   // MINISTÉRIO DA SAÚDE (precisa de 2)
   {
     id: 122,
-    text: "Qual seu interesse em liderar grupos de caminhada e exercícios físicos na igreja?",
+    text: "Qual seu interesse em liderar grupos de caminhada e exercícios físicos em público?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5013,7 +4702,7 @@ export const QUESTIONS: QUESTION[] = [
   // ESCRITOS DO ESPÍRITO DE PROFECIA (precisa de 2) - já ganha 1 da pergunta 117
   {
     id: 124,
-    text: "Qual seu interesse em facilitar círculos de leitura dos livros de Ellen White?",
+    text: "Qual seu interesse em facilitar círculos de leitura dos temas inspiracionais?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5138,46 +4827,6 @@ export const QUESTIONS: QUESTION[] = [
     ],
   },
   // ESCOLA SABATINA (precisa de 1)
-  {
-    id: 127,
-    text: "Qual seu interesse em recepcionar visitantes na Escola Sabatina com entusiasmo?",
-    type: QUESTION_TYPE.RANKING,
-    options: [
-      { text: "1", points: {} },
-      {
-        text: "2",
-        points: {
-          [SKILLS.integracao.name]: 1,
-          [SKILLS.alto_astral.name]: 1,
-          [DEPARTMENTS.escola_sabatina.name]: 1,
-        },
-      },
-      {
-        text: "3",
-        points: {
-          [SKILLS.integracao.name]: 2,
-          [SKILLS.alto_astral.name]: 2,
-          [DEPARTMENTS.escola_sabatina.name]: 2,
-        },
-      },
-      {
-        text: "4",
-        points: {
-          [SKILLS.integracao.name]: 3,
-          [SKILLS.alto_astral.name]: 3,
-          [DEPARTMENTS.escola_sabatina.name]: 3,
-        },
-      },
-      {
-        text: "5",
-        points: {
-          [SKILLS.integracao.name]: 4,
-          [SKILLS.alto_astral.name]: 4,
-          [DEPARTMENTS.escola_sabatina.name]: 4,
-        },
-      },
-    ],
-  },
   // CLUBE DE DESBRAVADORES (precisa de 1)
   {
     id: 128,
@@ -5307,7 +4956,7 @@ export const QUESTIONS: QUESTION[] = [
   // PERGUNTAS PARA HABILIDADE "SEGURANÇA" (precisa de 2 - já ganhou 1 da pergunta 115)
   {
     id: 131,
-    text: "Qual seu interesse em coordenar equipes de segurança durante cultos e eventos?",
+    text: "Qual seu interesse em coordenar equipes de segurança durante eventos e eventos?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5344,7 +4993,7 @@ export const QUESTIONS: QUESTION[] = [
   // PERGUNTAS TIPO MULTIPLE_CHOICE PARA DIVERSIFICAR
   {
     id: 132,
-    text: "Em quais atividades de apoio à família você tem interesse? (Selecione todas que se aplicam)",
+    text: "Em quais atividades de apoio à família você tem interesse?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
@@ -5379,11 +5028,11 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 133,
-    text: "Quais aspectos de segurança você pode contribuir? (Selecione todas que se aplicam)",
+    text: "Quais aspectos de segurança você pode contribuir?",
     type: QUESTION_TYPE.MULTIPLE_CHOICE,
     options: [
       {
-        text: "Monitoramento durante cultos",
+        text: "Monitoramento durante eventos",
         points: {
           [SKILLS.seguranca.name]: 3,
           [SKILLS.servico.name]: 2,
@@ -5415,7 +5064,7 @@ export const QUESTIONS: QUESTION[] = [
   // FOTOGRAFIA E VÍDEO (precisa de 3)
   {
     id: 134,
-    text: "Qual seu interesse em documentar eventos da igreja através de fotografia?",
+    text: "Qual seu interesse em documentar eventos de organizações através de fotografia?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5451,7 +5100,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 135,
-    text: "Como você avalia sua capacidade de gravar vídeos de testemunhos e batismos?",
+    text: "Como você avalia sua capacidade de gravar vídeos de depoimentos e eventos importantes?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5487,7 +5136,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 136,
-    text: "Qual seu interesse em criar conteúdo audiovisual para redes sociais da igreja?",
+    text: "Qual seu interesse em criar conteúdo audiovisual para redes sociais de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5528,7 +5177,7 @@ export const QUESTIONS: QUESTION[] = [
   // EDIÇÃO DE IMAGEM E VÍDEO (precisa de 3)
   {
     id: 137,
-    text: "Como você avalia sua habilidade para criar artes gráficas para programações da igreja?",
+    text: "Como você avalia sua habilidade para criar artes gráficas para programações de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5568,7 +5217,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 138,
-    text: "Qual seu interesse em editar conteúdo visual para ministérios da igreja?",
+    text: "Qual seu interesse em editar conteúdo visual para ministérios de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5641,7 +5290,7 @@ export const QUESTIONS: QUESTION[] = [
   // MINISTÉRIO DA MORDOMIA CRISTÃ (precisa de 3)
   {
     id: 140,
-    text: "Qual seu interesse em ensinar crianças e adolescentes sobre mordomia cristã?",
+    text: "Qual seu interesse em ensinar crianças e adolescentes sobre gestão responsável de recursos?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5650,6 +5299,7 @@ export const QUESTIONS: QUESTION[] = [
         points: {
           [SKILLS.ensino.name]: 1,
           [SKILLS.criancas.name]: 1,
+          [SKILLS.adolescentes.name]: 1,
           [DEPARTMENTS.ministerio_mordomia_crista.name]: 1,
         },
       },
@@ -5658,6 +5308,7 @@ export const QUESTIONS: QUESTION[] = [
         points: {
           [SKILLS.ensino.name]: 2,
           [SKILLS.criancas.name]: 2,
+          [SKILLS.adolescentes.name]: 2,
           [DEPARTMENTS.ministerio_mordomia_crista.name]: 2,
         },
       },
@@ -5666,6 +5317,7 @@ export const QUESTIONS: QUESTION[] = [
         points: {
           [SKILLS.ensino.name]: 3,
           [SKILLS.criancas.name]: 3,
+          [SKILLS.adolescentes.name]: 3,
           [DEPARTMENTS.ministerio_mordomia_crista.name]: 3,
         },
       },
@@ -5674,6 +5326,7 @@ export const QUESTIONS: QUESTION[] = [
         points: {
           [SKILLS.ensino.name]: 4,
           [SKILLS.criancas.name]: 4,
+          [SKILLS.adolescentes.name]: 4,
           [DEPARTMENTS.ministerio_mordomia_crista.name]: 4,
         },
       },
@@ -5681,7 +5334,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 141,
-    text: "Como você avalia seu interesse em promover projetos de mordomia ambiental?",
+    text: "Como você avalia seu interesse em promover projetos de gestão ambiental responsável?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5721,7 +5374,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 142,
-    text: "Qual seu interesse em criar materiais educativos sobre fidelidade nos dízimos?",
+    text: "Qual seu interesse em criar materiais educativos sobre gestão financeira responsável?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -5936,7 +5589,7 @@ export const QUESTIONS: QUESTION[] = [
   // MINISTÉRIO DA RECEPÇÃO (precisa de 2) + INTEGRAÇÃO (precisa de 2 - já ganhou 1 da 145)
   {
     id: 147,
-    text: "Qual seu interesse em coordenar a equipe de recepcionistas da igreja?",
+    text: "Qual seu interesse em coordenar a equipe de recepcionistas de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -6017,7 +5670,7 @@ export const QUESTIONS: QUESTION[] = [
   // PATRIMÔNIO/MANUTENÇÃO (precisa de 2)
   {
     id: 149,
-    text: "Qual seu interesse em coordenar projetos de melhoria das instalações da igreja?",
+    text: "Qual seu interesse em coordenar projetos de melhoria de instalações e espaços comunitários?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -6260,7 +5913,7 @@ export const QUESTIONS: QUESTION[] = [
   // INSTRUMENTOS MUSICAIS (precisa de 2)
   {
     id: 155,
-    text: "Qual seu interesse em tocar instrumentos em cultos de jovens e adolescentes?",
+    text: "Qual seu interesse em tocar instrumentos em eventos de jovens e adolescentes?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -6377,7 +6030,7 @@ export const QUESTIONS: QUESTION[] = [
   },
   {
     id: 158,
-    text: "Como você avalia sua disposição para visitar novos visitantes da igreja?",
+    text: "Como você avalia sua disposição para visitar novos visitantes de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
@@ -6418,7 +6071,7 @@ export const QUESTIONS: QUESTION[] = [
   // REDES SOCIAIS (precisa de 1 - já ganhou 1 da pergunta 136)
   {
     id: 159,
-    text: "Qual seu interesse em gerenciar as redes sociais dos ministérios da igreja?",
+    text: "Qual seu interesse em gerenciar as redes sociais dos ministérios de organizações?",
     type: QUESTION_TYPE.RANKING,
     options: [
       { text: "1", points: {} },
