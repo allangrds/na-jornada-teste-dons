@@ -1,5 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /private/
-
-Sitemap: https://teste-dons.najornada.com.br/sitemap.xml

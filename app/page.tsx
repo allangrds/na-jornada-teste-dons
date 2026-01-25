@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Progress } from "@/components/ui/progress"
 import { ChevronLeft, ChevronRight, Mail, RotateCcw, User, Phone } from "lucide-react"
-import { DEPARTMENTS, SKILLS, QUESTIONS, QUESTION_TYPE } from "@/lib/quiz-data"
+import { DEPARTMENTS, SKILLS, QUESTIONS, QUESTION_FORMAT, QUESTION_TYPE } from "@/lib/quiz-data"
 
 const questions = QUESTIONS
 
@@ -121,12 +121,12 @@ export default function SpiritualGiftsTest() {
 
   const handleOptionToggle = (optionIndex: number) => {
     const q = questions[currentQuestion]
-    const qType = q?.type ?? QUESTION_TYPE.MULTIPLE_CHOICE
+    const qFormat = q?.format ?? QUESTION_FORMAT.MULTIPLE_CHOICE
 
     if (
-      qType === QUESTION_TYPE.SINGLE_CHOICE ||
-      qType === QUESTION_TYPE.YES_NO ||
-      qType === QUESTION_TYPE.RANKING
+      qFormat === QUESTION_FORMAT.SINGLE_CHOICE ||
+      qFormat === QUESTION_FORMAT.YES_NO ||
+      qFormat === QUESTION_FORMAT.RANKING
     ) {
       // single-choice, yes_no, and ranking: only one option can be selected
       setSelectedOptions([optionIndex])
@@ -179,21 +179,35 @@ export default function SpiritualGiftsTest() {
   }
 
   const calculateResults = () => {
-    const departmentScores: Record<string, number> = {}
-    const skillScores: Record<string, number> = {}
+    // Scores for hability questions
+    const habilityDepartmentScores: Record<string, number> = {}
+    const habilitySkillScores: Record<string, number> = {}
+
+    // Scores for interest questions
+    const interestDepartmentScores: Record<string, number> = {}
+    const interestSkillScores: Record<string, number> = {}
+
     const departmentNames = Object.values(DEPARTMENTS).map((d) => d.name)
     const skillNames = Object.values(SKILLS).map((s) => s.name)
 
+    // Initialize all scores
     departmentNames.forEach((dept) => {
-      departmentScores[dept] = 0
+      habilityDepartmentScores[dept] = 0
+      interestDepartmentScores[dept] = 0
     })
     skillNames.forEach((skill) => {
-      skillScores[skill] = 0
+      habilitySkillScores[skill] = 0
+      interestSkillScores[skill] = 0
     })
 
     Object.entries(answers).forEach(([questionId, optionIndices]) => {
       const question = questions.find((q) => q.id === Number.parseInt(questionId))
       if (!question) return
+
+      // Determine which score objects to use based on question type
+      const isHability = question.type === QUESTION_TYPE.HABILITY
+      const deptScores = isHability ? habilityDepartmentScores : interestDepartmentScores
+      const skillScoresObj = isHability ? habilitySkillScores : interestSkillScores
 
       optionIndices.forEach((optionIndex) => {
         const option = question.options[optionIndex]
@@ -206,23 +220,38 @@ export default function SpiritualGiftsTest() {
 
         Object.entries(option.points).forEach(([name, points]) => {
           if (departmentNames.includes(name)) {
-            departmentScores[name] = (departmentScores[name] || 0) + points
+            deptScores[name] = (deptScores[name] || 0) + points
           } else if (skillNames.includes(name)) {
-            skillScores[name] = (skillScores[name] || 0) + points
+            skillScoresObj[name] = (skillScoresObj[name] || 0) + points
           }
         })
       })
     })
 
-    const departments = Object.entries(departmentScores)
+    // Process hability results
+    const habilityDepartments = Object.entries(habilityDepartmentScores)
       .sort(([, a], [, b]) => b - a)
       .filter(([, score]) => score > 0)
 
-    const skills = Object.entries(skillScores)
+    const habilitySkills = Object.entries(habilitySkillScores)
       .sort(([, a], [, b]) => b - a)
       .filter(([, score]) => score > 0)
 
-    return { departments, skills }
+    // Process interest results
+    const interestDepartments = Object.entries(interestDepartmentScores)
+      .sort(([, a], [, b]) => b - a)
+      .filter(([, score]) => score > 0)
+
+    const interestSkills = Object.entries(interestSkillScores)
+      .sort(([, a], [, b]) => b - a)
+      .filter(([, score]) => score > 0)
+
+    return {
+      habilityDepartments,
+      habilitySkills,
+      interestDepartments,
+      interestSkills
+    }
   }
 
   // Loading screen
@@ -395,11 +424,17 @@ export default function SpiritualGiftsTest() {
   }
 
   if (stage === "results") {
-    const { departments, skills } = calculateResults()
-    const top3Departments = departments.slice(0, 3)
-    const otherDepartments = departments.slice(3)
-    const top3Skills = skills.slice(0, 3)
-    const otherSkills = skills.slice(3)
+    const { habilityDepartments, habilitySkills, interestDepartments, interestSkills } = calculateResults()
+
+    // Hability (areas of action)
+    const top3HabilityDepartments = habilityDepartments.slice(0, 3)
+    const otherHabilityDepartments = habilityDepartments.slice(3)
+    const top3HabilitySkills = habilitySkills.slice(0, 3)
+    const otherHabilitySkills = habilitySkills.slice(3)
+
+    // Interest (areas of interest)
+    const top3InterestDepartments = interestDepartments.slice(0, 3)
+    const otherInterestDepartments = interestDepartments.slice(3)
 
     return (
       <div className="min-h-screen bg-background py-12 px-4">
@@ -457,15 +492,15 @@ export default function SpiritualGiftsTest() {
             </Card>
           )}
 
-          {/* Top 3 Departments */}
-          {top3Departments.length > 0 && (
+          {/* Top 3 Hability Departments */}
+          {top3HabilityDepartments.length > 0 && (
             <Card className="p-6 shadow-xl">
               <h2 className="text-xl font-semibold text-foreground mb-4">🌟 Suas principais áreas de atuação</h2>
               <div className="space-y-4">
-                {top3Departments.map(([dept, score], index) => {
+                {top3HabilityDepartments.map(([dept, score]: [string, number], index: number) => {
                   const deptKey = Object.keys(DEPARTMENTS).find(key => DEPARTMENTS[key as keyof typeof DEPARTMENTS].name === dept)
                   const description = deptKey ? DEPARTMENTS[deptKey as keyof typeof DEPARTMENTS].description : undefined
-                  
+
                   return (
                     <div
                       key={dept}
@@ -486,7 +521,7 @@ export default function SpiritualGiftsTest() {
                         <span className="text-2xl font-bold text-primary">{score}</span>
                       </div>
                       <div className="mt-4">
-                        <Progress value={(score / top3Departments[0][1]) * 100} className="h-3" />
+                        <Progress value={(score / top3HabilityDepartments[0][1]) * 100} className="h-3" />
                       </div>
                     </div>
                   )
@@ -495,15 +530,15 @@ export default function SpiritualGiftsTest() {
             </Card>
           )}
 
-          {/* Other Departments */}
-          {otherDepartments.length > 0 && (
+          {/* Other Hability Departments */}
+          {otherHabilityDepartments.length > 0 && (
             <Card className="p-6 shadow-xl">
-              <h2 className="text-xl font-semibold text-foreground mb-4">Outras áreas identificadas</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-4">Outras áreas de atuação</h2>
               <div className="grid gap-3">
-                {otherDepartments.map(([dept, score]) => {
+                {otherHabilityDepartments.map(([dept, score]: [string, number]) => {
                   const deptKey = Object.keys(DEPARTMENTS).find(key => DEPARTMENTS[key as keyof typeof DEPARTMENTS].name === dept)
                   const description = deptKey ? DEPARTMENTS[deptKey as keyof typeof DEPARTMENTS].description : undefined
-                  
+
                   return (
                     <div
                       key={dept}
@@ -523,15 +558,81 @@ export default function SpiritualGiftsTest() {
             </Card>
           )}
 
-          {/* Top 3 Skills */}
-          {top3Skills.length > 0 && (
+          {/* Top 3 Interest Departments */}
+          {top3InterestDepartments.length > 0 && (
+            <Card className="p-6 shadow-xl">
+              <h2 className="text-xl font-semibold text-foreground mb-4">💡 Suas principais áreas de interesse</h2>
+              <div className="space-y-4">
+                {top3InterestDepartments.map(([dept, score]: [string, number], index: number) => {
+                  const deptKey = Object.keys(DEPARTMENTS).find(key => DEPARTMENTS[key as keyof typeof DEPARTMENTS].name === dept)
+                  const description = deptKey ? DEPARTMENTS[deptKey as keyof typeof DEPARTMENTS].description : undefined
+
+                  return (
+                    <div
+                      key={dept}
+                      className="bg-accent border border-border rounded-lg p-6"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-3">
+                          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold text-sm">
+                            {index + 1}
+                          </span>
+                          <div>
+                            <h3 className="text-lg font-semibold text-foreground">{dept}</h3>
+                            {description && (
+                              <p className="text-sm text-muted-foreground">{description}</p>
+                            )}
+                          </div>
+                        </div>
+                        <span className="text-2xl font-bold text-primary">{score}</span>
+                      </div>
+                      <div className="mt-4">
+                        <Progress value={(score / top3InterestDepartments[0][1]) * 100} className="h-3" />
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </Card>
+          )}
+
+          {/* Other Interest Departments */}
+          {otherInterestDepartments.length > 0 && (
+            <Card className="p-6 shadow-xl">
+              <h2 className="text-xl font-semibold text-foreground mb-4">Outras áreas de interesse</h2>
+              <div className="grid gap-3">
+                {otherInterestDepartments.map(([dept, score]: [string, number]) => {
+                  const deptKey = Object.keys(DEPARTMENTS).find(key => DEPARTMENTS[key as keyof typeof DEPARTMENTS].name === dept)
+                  const description = deptKey ? DEPARTMENTS[deptKey as keyof typeof DEPARTMENTS].description : undefined
+
+                  return (
+                    <div
+                      key={dept}
+                      className="bg-muted border border-border rounded-lg p-4 flex items-center justify-between"
+                    >
+                      <div className="flex-1">
+                        <span className="font-medium text-foreground">{dept}</span>
+                        {description && (
+                          <p className="text-sm text-muted-foreground mt-1">{description}</p>
+                        )}
+                      </div>
+                      <span className="text-lg font-semibold text-muted-foreground ml-4">{score}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            </Card>
+          )}
+
+          {/* Top 3 Hability Skills */}
+          {top3HabilitySkills.length > 0 && (
             <Card className="p-6 shadow-xl">
               <h2 className="text-xl font-semibold text-foreground mb-4">🌟 Suas principais habilidades</h2>
               <div className="space-y-4">
-                {top3Skills.map(([skill, score], index) => {
+                {top3HabilitySkills.map(([skill, score]: [string, number], index: number) => {
                   const skillKey = Object.keys(SKILLS).find(key => SKILLS[key as keyof typeof SKILLS].name === skill)
                   const description = skillKey ? SKILLS[skillKey as keyof typeof SKILLS].description : undefined
-                  
+
                   return (
                     <div
                       key={skill}
@@ -552,7 +653,7 @@ export default function SpiritualGiftsTest() {
                         <span className="text-2xl font-bold text-primary">{score}</span>
                       </div>
                       <div className="mt-4">
-                        <Progress value={(score / top3Skills[0][1]) * 100} className="h-3" />
+                        <Progress value={(score / top3HabilitySkills[0][1]) * 100} className="h-3" />
                       </div>
                     </div>
                   )
@@ -561,15 +662,15 @@ export default function SpiritualGiftsTest() {
             </Card>
           )}
 
-          {/* Other Skills */}
-          {otherSkills.length > 0 && (
+          {/* Other Hability Skills */}
+          {otherHabilitySkills.length > 0 && (
             <Card className="p-6 shadow-xl">
-              <h2 className="text-xl font-semibold text-foreground mb-4">Outras habilidades identificadas</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-4">Outras habilidades</h2>
               <div className="grid gap-3">
-                {otherSkills.map(([skill, score]) => {
+                {otherHabilitySkills.map(([skill, score]: [string, number]) => {
                   const skillKey = Object.keys(SKILLS).find(key => SKILLS[key as keyof typeof SKILLS].name === skill)
                   const description = skillKey ? SKILLS[skillKey as keyof typeof SKILLS].description : undefined
-                  
+
                   return (
                     <div
                       key={skill}
@@ -624,15 +725,15 @@ export default function SpiritualGiftsTest() {
 
   const question = questions[currentQuestion]
 
-  const getQuestionTypeHelperText = (type: QUESTION_TYPE): string => {
-    switch (type) {
-      case QUESTION_TYPE.SINGLE_CHOICE:
+  const getQuestionFormatHelperText = (format: QUESTION_FORMAT): string => {
+    switch (format) {
+      case QUESTION_FORMAT.SINGLE_CHOICE:
         return "Escolha apenas uma das alternativas"
-      case QUESTION_TYPE.MULTIPLE_CHOICE:
+      case QUESTION_FORMAT.MULTIPLE_CHOICE:
         return "Escolha uma ou várias alternativas"
-      case QUESTION_TYPE.RANKING:
+      case QUESTION_FORMAT.RANKING:
         return "De 1 a 5, considerando 1 como discordo totalmente e 5 como concordo totalmente"
-      case QUESTION_TYPE.YES_NO:
+      case QUESTION_FORMAT.YES_NO:
         return "Responda de forma objetiva"
       default:
         return ""
@@ -669,7 +770,7 @@ export default function SpiritualGiftsTest() {
               <h2 className="text-xl md:text-2xl font-semibold text-foreground text-balance leading-relaxed">
                 {question.text}
               </h2>
-              <p className="text-sm text-muted-foreground mt-2">{getQuestionTypeHelperText(question.type)}</p>
+              <p className="text-sm text-muted-foreground mt-2">{getQuestionFormatHelperText(question.format)}</p>
             </div>
 
             <div className="space-y-3">

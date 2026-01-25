@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { ArrowLeft, BarChart3, ChevronDown, ChevronUp } from "lucide-react"
-import { DEPARTMENTS, SKILLS, QUESTIONS, QUESTION_TYPE } from "@/lib/quiz-data"
+import { DEPARTMENTS, SKILLS, QUESTIONS, QUESTION_FORMAT, QUESTION_TYPE } from "@/lib/quiz-data"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
@@ -10,6 +10,7 @@ import { useState } from "react"
 type QuestionDetail = {
   id: number
   text: string
+  format: QUESTION_FORMAT
   type: QUESTION_TYPE
   options: {
     text: string
@@ -22,6 +23,8 @@ type StatItem = {
   description?: string
   questionCount: number
   maxPoints: number
+  maxPointsHability: number
+  maxPointsInterest: number
   questions: QuestionDetail[]
 }
 
@@ -37,6 +40,8 @@ export default function StatisticsPage() {
         description: dept.description,
         questionCount: 0,
         maxPoints: 0,
+        maxPointsHability: 0,
+        maxPointsInterest: 0,
         questions: [],
       }
     })
@@ -47,6 +52,8 @@ export default function StatisticsPage() {
         description: skill.description,
         questionCount: 0,
         maxPoints: 0,
+        maxPointsHability: 0,
+        maxPointsInterest: 0,
         questions: [],
       }
     })
@@ -56,12 +63,12 @@ export default function StatisticsPage() {
       const departmentsInQuestion = new Set<string>()
       const skillsInQuestion = new Set<string>()
 
-      // For single-choice questions (single_choice, yes_no, ranking), 
+      // For single-choice questions (single_choice, yes_no, ranking),
       // we need to find the maximum points among options, not sum them
       const isSingleChoice =
-        question.type === QUESTION_TYPE.SINGLE_CHOICE ||
-        question.type === QUESTION_TYPE.YES_NO ||
-        question.type === QUESTION_TYPE.RANKING
+        question.format === QUESTION_FORMAT.SINGLE_CHOICE ||
+        question.format === QUESTION_FORMAT.YES_NO ||
+        question.format === QUESTION_FORMAT.RANKING
 
       if (isSingleChoice) {
         // Track the max points per department/skill across all options
@@ -93,18 +100,30 @@ export default function StatisticsPage() {
         // Add the maximum points to the stats and store question details
         Object.entries(maxPointsPerDept).forEach(([name, points]) => {
           departmentStats[name].maxPoints += points
+          if (question.type === QUESTION_TYPE.HABILITY) {
+            departmentStats[name].maxPointsHability += points
+          } else {
+            departmentStats[name].maxPointsInterest += points
+          }
           departmentStats[name].questions.push({
             id: question.id,
             text: question.text,
+            format: question.format,
             type: question.type,
             options: deptQuestionDetails[name],
           })
         })
         Object.entries(maxPointsPerSkill).forEach(([name, points]) => {
           skillStats[name].maxPoints += points
+          if (question.type === QUESTION_TYPE.HABILITY) {
+            skillStats[name].maxPointsHability += points
+          } else {
+            skillStats[name].maxPointsInterest += points
+          }
           skillStats[name].questions.push({
             id: question.id,
             text: question.text,
+            format: question.format,
             type: question.type,
             options: skillQuestionDetails[name],
           })
@@ -132,17 +151,33 @@ export default function StatisticsPage() {
 
         // Store question details for multiple choice
         Object.entries(deptQuestionDetails).forEach(([name, options]) => {
+          // For multiple choice, sum up all points for this department
+          const totalPoints = options.reduce((sum, opt) => sum + opt.points, 0)
+          if (question.type === QUESTION_TYPE.HABILITY) {
+            departmentStats[name].maxPointsHability += totalPoints
+          } else {
+            departmentStats[name].maxPointsInterest += totalPoints
+          }
           departmentStats[name].questions.push({
             id: question.id,
             text: question.text,
+            format: question.format,
             type: question.type,
             options,
           })
         })
         Object.entries(skillQuestionDetails).forEach(([name, options]) => {
+          // For multiple choice, sum up all points for this skill
+          const totalPoints = options.reduce((sum, opt) => sum + opt.points, 0)
+          if (question.type === QUESTION_TYPE.HABILITY) {
+            skillStats[name].maxPointsHability += totalPoints
+          } else {
+            skillStats[name].maxPointsInterest += totalPoints
+          }
           skillStats[name].questions.push({
             id: question.id,
             text: question.text,
+            format: question.format,
             type: question.type,
             options,
           })
@@ -237,17 +272,39 @@ export default function StatisticsPage() {
     return "Habilidade"
   }
 
-  const getQuestionTypeLabel = (type: QUESTION_TYPE) => {
-    switch (type) {
-      case QUESTION_TYPE.SINGLE_CHOICE:
+  const getQuestionFormatLabel = (format: QUESTION_FORMAT) => {
+    switch (format) {
+      case QUESTION_FORMAT.SINGLE_CHOICE:
         return "Escolha única"
-      case QUESTION_TYPE.MULTIPLE_CHOICE:
+      case QUESTION_FORMAT.MULTIPLE_CHOICE:
         return "Múltipla escolha"
-      case QUESTION_TYPE.RANKING:
+      case QUESTION_FORMAT.RANKING:
         return "Escala de 1 a 5"
-      case QUESTION_TYPE.YES_NO:
+      case QUESTION_FORMAT.YES_NO:
         return "Sim/Não"
     }
+  }
+
+  const getQuestionTypeLabel = (type: QUESTION_TYPE) => {
+    switch (type) {
+      case QUESTION_TYPE.HABILITY:
+        return "Habilidade"
+      case QUESTION_TYPE.INTEREST:
+        return "Interesse"
+    }
+  }
+
+  const getQuestionTypeBadge = (type: QUESTION_TYPE) => {
+    const isHability = type === QUESTION_TYPE.HABILITY
+    return (
+      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
+        isHability
+          ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300"
+          : "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300"
+      }`}>
+        {isHability ? "Habilidade" : "Interesse"}
+      </span>
+    )
   }
 
   return (
@@ -327,7 +384,7 @@ export default function StatisticsPage() {
                               <p className="text-sm text-muted-foreground">{dept.description}</p>
                             )}
                           </div>
-                          <div className="flex gap-6 md:gap-8 flex-shrink-0">
+                          <div className="flex gap-4 md:gap-6 flex-shrink-0 flex-wrap">
                             <div className="text-center">
                               <div className="text-2xl font-bold text-primary">{dept.questionCount}</div>
                               <div className="text-xs text-muted-foreground font-medium">
@@ -340,6 +397,18 @@ export default function StatisticsPage() {
                                 {dept.maxPoints === 1 ? "ponto" : "pontos"}
                               </div>
                             </div>
+                            {dept.maxPointsHability > 0 && (
+                              <div className="text-center">
+                                <div className="text-2xl font-bold">{dept.maxPointsHability}</div>
+                                <div className="text-xs text-muted-foreground font-medium">habilidade</div>
+                              </div>
+                            )}
+                            {dept.maxPointsInterest > 0 && (
+                              <div className="text-center">
+                                <div className="text-2xl font-bold">{dept.maxPointsInterest}</div>
+                                <div className="text-xs text-muted-foreground font-medium">interesse</div>
+                              </div>
+                            )}
                           </div>
                         </div>
 
@@ -373,7 +442,10 @@ export default function StatisticsPage() {
                                 </span>
                                 <div className="flex-1">
                                   <p className="text-sm font-medium text-foreground">{q.text}</p>
-                                  <p className="text-xs text-muted-foreground mt-1">{getQuestionTypeLabel(q.type)}</p>
+                                  <div className="flex items-center gap-2 mt-1">
+                                    <span className="text-xs text-muted-foreground">{getQuestionFormatLabel(q.format)}</span>
+                                    {getQuestionTypeBadge(q.type)}
+                                  </div>
                                 </div>
                               </div>
                               <div className="ml-8 space-y-1">
@@ -443,7 +515,7 @@ export default function StatisticsPage() {
                               <p className="text-sm text-muted-foreground">{skill.description}</p>
                             )}
                           </div>
-                          <div className="flex gap-6 md:gap-8 flex-shrink-0">
+                          <div className="flex gap-4 md:gap-6 flex-shrink-0 flex-wrap">
                             <div className="text-center">
                               <div className="text-2xl font-bold text-primary">{skill.questionCount}</div>
                               <div className="text-xs text-muted-foreground font-medium">
@@ -456,6 +528,18 @@ export default function StatisticsPage() {
                                 {skill.maxPoints === 1 ? "ponto" : "pontos"}
                               </div>
                             </div>
+                            {skill.maxPointsHability > 0 && (
+                              <div className="text-center">
+                                <div className="text-2xl font-bold">{skill.maxPointsHability}</div>
+                                <div className="text-xs text-muted-foreground font-medium">habilidade</div>
+                              </div>
+                            )}
+                            {skill.maxPointsInterest > 0 && (
+                              <div className="text-center">
+                                <div className="text-2xl font-bold">{skill.maxPointsInterest}</div>
+                                <div className="text-xs text-muted-foreground font-medium">interesse</div>
+                              </div>
+                            )}
                           </div>
                         </div>
 
@@ -489,7 +573,10 @@ export default function StatisticsPage() {
                                 </span>
                                 <div className="flex-1">
                                   <p className="text-sm font-medium text-foreground">{q.text}</p>
-                                  <p className="text-xs text-muted-foreground mt-1">{getQuestionTypeLabel(q.type)}</p>
+                                  <div className="flex items-center gap-2 mt-1">
+                                    <span className="text-xs text-muted-foreground">{getQuestionFormatLabel(q.format)}</span>
+                                    {getQuestionTypeBadge(q.type)}
+                                  </div>
                                 </div>
                               </div>
                               <div className="ml-8 space-y-1">
@@ -667,10 +754,11 @@ export default function StatisticsPage() {
                             </span>
                             <div className="flex-1">
                               <p className="text-base font-semibold text-foreground">{question.text}</p>
-                              <div className="flex items-center gap-2 mt-2">
+                              <div className="flex items-center gap-2 mt-2 flex-wrap">
                                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-muted text-foreground">
-                                  {getQuestionTypeLabel(question.type)}
+                                  {getQuestionFormatLabel(question.format)}
                                 </span>
+                                {getQuestionTypeBadge(question.type)}
                                 <span className="text-xs text-muted-foreground">
                                   {question.options.length} {question.options.length === 1 ? "opção" : "opções"}
                                 </span>
